@@ -1,7 +1,9 @@
 node_modules/
+.feed_secret
 .env
 .DS_Store
 .env.*
 .claude/
 projects/
 *.jsonl
+scripts/__pycache__/

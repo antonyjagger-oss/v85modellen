@@ -103,7 +103,7 @@ def fetch_coupon_legs(cur: sqlite3.Cursor, run_id: str) -> Dict[int, List[sqlite
     return grouped
 
 
-def fetch_recent_completed_union_runs(cur: sqlite3.Cursor, limit: int = 8) -> List[sqlite3.Row]:
+def fetch_recent_completed_union_runs(cur: sqlite3.Cursor) -> List[sqlite3.Row]:
     return cur.execute(
         """
         WITH latest_union AS (
@@ -131,9 +131,7 @@ def fetch_recent_completed_union_runs(cur: sqlite3.Cursor, limit: int = 8) -> Li
         WHERE g.status = 'results'
           AND DATE(COALESCE(g.timestamp, cr.created_at)) >= DATE('now', '-7 days')
         ORDER BY COALESCE(g.timestamp, cr.created_at) DESC
-        LIMIT ?
-        """,
-        (limit,),
+        """
     ).fetchall()
 
 
@@ -250,11 +248,7 @@ def build_wrap(cur: sqlite3.Cursor, row: sqlite3.Row) -> Optional[dict]:
     )
     hit_legs = [str(i + 1) for i, mark in enumerate(result["leg_results"]) if mark == "✓"]
     miss_legs = [str(i + 1) for i, mark in enumerate(result["leg_results"]) if mark == "✗"]
-    summary_bits = [
-        f"Kostnad {result['cost_sek']} kr.",
-        f"{result['hits']} av {result['total_legs']} rätt.",
-        payout_text,
-    ]
+    summary_bits = [f"{result['hits']} av {result['total_legs']} rätt.", payout_text]
     if hit_legs:
         summary_bits.append(f"Träff i avdelning {', '.join(hit_legs)}.")
     if miss_legs:
@@ -308,7 +302,7 @@ def build_coupon(cur: sqlite3.Cursor, row: sqlite3.Row) -> Optional[dict]:
 
 def build_feed(con: sqlite3.Connection, price: int) -> dict:
     cur = con.cursor()
-    recent_run_rows = fetch_recent_completed_union_runs(cur, limit=24)
+    recent_run_rows = fetch_recent_completed_union_runs(cur)
     coupon_rows = fetch_latest_union_coupons(cur, limit=3)
 
     recent_results = []
