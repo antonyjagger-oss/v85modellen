@@ -306,6 +306,40 @@
         /* ── RESULTS TABLE ── */
         .results-wrap { overflow-x: auto; margin-bottom: 3rem; }
 
+        .rolling-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .rolling-stat {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 0.9rem 1rem;
+        }
+
+        .rolling-stat-label {
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.35rem;
+        }
+
+        .rolling-stat-value {
+            font-size: 1.35rem;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .rolling-stat-sub {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            margin-top: 0.25rem;
+        }
+
         .results-table {
             width: 100%;
             border-collapse: collapse;
@@ -937,7 +971,10 @@
             <div class="section-header fade-in">
                 <div class="section-label">Senaste resultat</div>
                 <div class="section-title">Hur modellen presterar</div>
-                <div class="section-subtitle">Alla speltyper — uppdateras efter varje omgång</div>
+                <div class="section-subtitle">Union-resultat från ett rullande 7-dagarsfönster</div>
+            </div>
+            <div class="rolling-summary fade-in" id="rolling-summary">
+                <div class="loading-message">Laddar 7-dagarsöversikt...</div>
             </div>
             <div class="results-wrap fade-in" id="results-container">
                 <div class="loading-message">Laddar resultat...</div>
@@ -947,9 +984,9 @@
         <!-- DAGLIG SAMMANFATTNING -->
         <section id="sammanfattning">
             <div class="section-header fade-in">
-                <div class="section-label">Daglig sammanfattning</div>
+                <div class="section-label">Senaste omgångar</div>
                 <div class="section-title">Analys efter varje omgång</div>
-                <div class="section-subtitle">Vilka signaler som levererade — och varför</div>
+                <div class="section-subtitle">Kort, faktabaserad summering från resultatdatabasen</div>
             </div>
             <div class="wrap-cards fade-in" id="wraps-container">
                 <div class="loading-message">Laddar sammanfattningar...</div>
@@ -959,9 +996,9 @@
         <!-- EXEMPELKUPONGER -->
         <section id="kuponger">
             <div class="section-header fade-in">
-                <div class="section-label">Exempelkuponger</div>
-                <div class="section-title">Så byggs kupongerna</div>
-                <div class="section-subtitle">Varje val motiverat av modellsignaler</div>
+                <div class="section-label">Senaste kuponger</div>
+                <div class="section-title">Faktiska union-kuponger</div>
+                <div class="section-subtitle">Direkt från senaste frysta körningarna</div>
             </div>
             <div class="fade-in" id="coupons-container">
                 <div class="loading-message">Laddar kuponger...</div>
@@ -1048,7 +1085,7 @@
     (function() {
         'use strict';
 
-        const FEED_URL = '/data/feed.json';
+        const FEED_URL = '/api/feed';
 
         // ── Helpers ──
         function formatDate(dateStr) {
@@ -1069,6 +1106,25 @@
         }
 
         // ── Render Results ──
+        function renderRollingSummary(stats) {
+            if (!stats || !stats.rolling_window_days) {
+                return '<div class="loading-message">Ingen 7-dagarsdata ännu</div>';
+            }
+
+            return [
+                ['Avgjorda spel', stats.union_games_settled || 0, stats.rolling_window_days + ' dagar'],
+                ['Vinster', stats.union_wins || 0, 'med utdelning'],
+                ['Near misses', stats.union_near_misses || 0, 'en rätt ifrån'],
+                ['Fullträffar', stats.union_perfect_hits || 0, 'alla ben rätt']
+            ].map(function(item) {
+                return '<div class="rolling-stat">' +
+                    '<div class="rolling-stat-label">' + escapeHtml(item[0]) + '</div>' +
+                    '<div class="rolling-stat-value">' + escapeHtml(String(item[1])) + '</div>' +
+                    '<div class="rolling-stat-sub">' + escapeHtml(item[2]) + '</div>' +
+                    '</div>';
+            }).join('');
+        }
+
         function renderResults(results) {
             if (!results || results.length === 0) {
                 return '<div class="loading-message">Inga resultat ännu</div>';
@@ -1153,7 +1209,7 @@
         // ── Render Coupons ──
         function renderCoupons(coupons) {
             if (!coupons || coupons.length === 0) {
-                return '<div class="loading-message">Inga exempelkuponger ännu</div>';
+                return '<div class="loading-message">Inga kuponger ännu</div>';
             }
 
             let html = '';
@@ -1212,12 +1268,14 @@
                 }
 
                 // Render sections
+                document.getElementById('rolling-summary').innerHTML = renderRollingSummary(feed.stats);
                 document.getElementById('results-container').innerHTML = renderResults(feed.recent_results);
                 document.getElementById('wraps-container').innerHTML = renderWraps(feed.wraps);
                 document.getElementById('coupons-container').innerHTML = renderCoupons(feed.sample_coupons);
 
             } catch (err) {
                 console.error('Failed to load feed:', err);
+                document.getElementById('rolling-summary').innerHTML = '<div class="loading-message">Kunde inte ladda data</div>';
                 document.getElementById('results-container').innerHTML = '<div class="loading-message">Kunde inte ladda data</div>';
                 document.getElementById('wraps-container').innerHTML = '<div class="loading-message">Kunde inte ladda data</div>';
                 document.getElementById('coupons-container').innerHTML = '<div class="loading-message">Kunde inte ladda data</div>';
