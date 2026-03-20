@@ -112,6 +112,33 @@
 
         .nav-logo span { color: var(--accent); }
 
+        .union-mark {
+            display: inline-flex;
+            align-items: flex-start;
+            gap: 0.08em;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--text);
+            white-space: nowrap;
+        }
+
+        .union-mark .union-word {
+            letter-spacing: -0.04em;
+        }
+
+        .union-mark .union-tail {
+            color: var(--accent);
+            letter-spacing: -0.02em;
+        }
+
+        .union-mark .union-tm {
+            font-size: 0.48em;
+            line-height: 1;
+            color: var(--text-muted);
+            margin-left: 0.08em;
+            transform: translateY(0.1em);
+        }
+
         .nav-badge {
             font-size: 0.65rem;
             font-weight: 600;
@@ -1018,7 +1045,7 @@
                 Modellen är live
             </div>
             <h1>V85Modellen —<br><span class="accent">Datadrivna travspel</span></h1>
-            <p class="hero-tagline" id="hero-tagline">Union-kuponger, Formlines och modellbaserad analys för dagens spel från ATG.</p>
+            <p class="hero-tagline" id="hero-tagline"><span class="union-mark"><span class="union-word">Unio</span><span class="union-tail">n</span><span class="union-tm">TM</span></span>-kuponger, Formlines och modellbaserad analys för dagens spel från ATG.</p>
             <div class="hero-cta-row">
                 <a href="https://www.patreon.com/c/V85Modellen" target="_blank" rel="noopener" class="btn-primary">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -1033,7 +1060,7 @@
             <div class="section-header fade-in">
                 <div class="section-label">Senaste resultat</div>
                 <div class="section-title">Hur modellen presterar</div>
-                <div class="section-subtitle">Union-resultat från ett rullande 7-dagarsfönster</div>
+                <div class="section-subtitle"><span class="union-mark"><span class="union-word">Unio</span><span class="union-tail">n</span><span class="union-tm">TM</span></span>-resultat från ett rullande 7-dagarsfönster</div>
             </div>
             <div class="rolling-summary fade-in" id="rolling-summary">
                 <div class="loading-message">Laddar 7-dagarsöversikt...</div>
@@ -1059,9 +1086,9 @@
         <section id="kuponger">
             <div class="section-header fade-in">
                 <div class="section-label">Senaste kuponger</div>
-                <div class="section-title with-icon"><img src="/union-icon.svg" alt="Union icon">Faktiska union-kuponger</div>
+                <div class="section-title with-icon"><img src="/union-icon.svg" alt="Union icon">Faktiska <span class="union-mark"><span class="union-word">Unio</span><span class="union-tail">n</span><span class="union-tm">TM</span></span>-kuponger</div>
                 <div class="section-subtitle">Direkt från senaste frysta körningarna</div>
-                <div class="section-note"><img src="/union-icon.svg" alt="Union icon">Alpha-medlemmar får dagens union-kuponger före spelstopp</div>
+                <div class="section-note"><img src="/union-icon.svg" alt="Union icon">Alpha-medlemmar får dagens <span class="union-mark"><span class="union-word">Unio</span><span class="union-tail">n</span><span class="union-tm">TM</span></span>-kuponger före spelstopp</div>
             </div>
             <div class="fade-in" id="coupons-container">
                 <div class="loading-message">Laddar kuponger...</div>
@@ -1101,7 +1128,7 @@
 
             <div class="about-full fade-in">
                 <p><strong>V85Modellen</strong> är ett modellbaserat system för svensk trav som täcker flera speltyper från ATG. Kupongerna byggs inte från en enda ranking, utan från fyra separata modellperspektiv: Formlines, Context, V5 och Odds.</p>
-                <p>Union är inte en egen signal, utan själva kupongen där de fyra modellerna vägs ihop. Där modellerna är överens kan systemet gå smalare. Där de drar åt olika håll blir kupongen bredare för att täcka osäkerheten bättre.</p>
+                <p><span class="union-mark"><span class="union-word">Unio</span><span class="union-tail">n</span><span class="union-tm">TM</span></span> är inte en egen signal, utan själva kupongen där de fyra modellerna vägs ihop. Där modellerna är överens kan systemet gå smalare. Där de drar åt olika håll blir kupongen bredare för att täcka osäkerheten bättre.</p>
                 <p>Systemet är byggt av en travintresserad dataingenjör — inte ett spelbolag. Målet är ett transparent, ärligt verktyg för travspelaren som vill ha data bakom sina beslut istället för magkänsla.</p>
             </div>
         </section>
@@ -1118,7 +1145,7 @@
                 <div class="pricing-period">löpande via Patreon</div>
                 <ul class="pricing-features">
                     <li>Dagens faktiska kuponger före spelstopp</li>
-                    <li>Union-kuponger exklusivt för alpha-medlemmar</li>
+                    <li><span class="union-mark"><span class="union-word">Unio</span><span class="union-tail">n</span><span class="union-tm">TM</span></span>-kuponger exklusivt för alpha-medlemmar</li>
                     <li>Kort resultatsummering efter varje omgång</li>
                     <li>Öppen signalfördelning per avdelning</li>
                     <!-- <li>Direkt leverans via Telegram</li> -->
