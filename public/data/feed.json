@@ -8,24 +8,57 @@
     "x": "https://x.com/v85Modellen"
   },
   "stats": {
-    "updated_at": "2026-03-20T15:48:19.642691Z",
+    "updated_at": "2026-03-20T21:59:05.032562Z",
     "alpha_price_sek_per_month": 49,
     "rolling_window_days": 7,
-    "union_games_settled": 34,
-    "union_wins": 10,
-    "union_near_misses": 9,
-    "union_perfect_hits": 9,
-    "union_total_cost_sek": 12787,
-    "union_total_payout_sek": 12475,
-    "union_roi_pct": -2.4
+    "union_games_settled": 44,
+    "union_wins": 11,
+    "union_near_misses": 12,
+    "union_perfect_hits": 10,
+    "union_total_cost_sek": 15779,
+    "union_total_payout_sek": 13001,
+    "union_roi_pct": -17.6
   },
   "recent_results": [
     {
       "date": "2026-03-20",
       "mode": "union",
-      "game_id": "V3_2026-03-20_23_6",
+      "game_id": "dd_2026-03-20_18_8",
+      "game_type": "dd",
+      "track": "Halmstad",
+      "hits": 1,
+      "total_legs": 2,
+      "leg_results": [
+        "✓",
+        "✗"
+      ],
+      "payout_sek": null,
+      "status": "1 rätt",
+      "cost_sek": 160
+    },
+    {
+      "date": "2026-03-20",
+      "mode": "union",
+      "game_id": "V3_2026-03-20_18_8",
       "game_type": "V3",
-      "track": "Romme",
+      "track": "Halmstad",
+      "hits": 1,
+      "total_legs": 3,
+      "leg_results": [
+        "✗",
+        "✗",
+        "✓"
+      ],
+      "payout_sek": null,
+      "status": "1 rätt",
+      "cost_sek": 240
+    },
+    {
+      "date": "2026-03-20",
+      "mode": "union",
+      "game_id": "V3_2026-03-20_11_7",
+      "game_type": "V3",
+      "track": "Boden",
       "hits": 1,
       "total_legs": 3,
       "leg_results": [
@@ -40,174 +73,154 @@
     {
       "date": "2026-03-20",
       "mode": "union",
-      "game_id": "V4_2026-03-20_23_4",
+      "game_id": "V4_2026-03-20_11_6",
       "game_type": "V4",
-      "track": "Romme",
+      "track": "Boden",
       "hits": 2,
       "total_legs": 4,
       "leg_results": [
-        "✓",
         "✗",
         "✓",
-        "✗"
+        "✗",
+        "✓"
       ],
       "payout_sek": null,
       "status": "2 rätt",
-      "cost_sek": 96
+      "cost_sek": 288
     },
     {
       "date": "2026-03-20",
       "mode": "union",
-      "game_id": "V65_2026-03-20_23_2",
-      "game_type": "V65",
-      "track": "Romme",
-      "hits": 4,
+      "game_id": "V4_2026-03-20_18_6",
+      "game_type": "V4",
+      "track": "Halmstad",
+      "hits": 1,
+      "total_legs": 4,
+      "leg_results": [
+        "✗",
+        "✗",
+        "✓",
+        "✗"
+      ],
+      "payout_sek": null,
+      "status": "1 rätt",
+      "cost_sek": 384
+    },
+    {
+      "date": "2026-03-20",
+      "mode": "union",
+      "game_id": "V64_2026-03-20_18_4",
+      "game_type": "V64",
+      "track": "Halmstad",
+      "hits": 2,
       "total_legs": 6,
+      "leg_results": [
+        "✓",
+        "✗",
+        "✗",
+        "✗",
+        "✓",
+        "✗"
+      ],
+      "payout_sek": null,
+      "status": "2 rätt",
+      "cost_sek": 216
+    },
+    {
+      "date": "2026-03-20",
+      "mode": "union",
+      "game_id": "V5_2026-03-20_11_2",
+      "game_type": "V5",
+      "track": "Boden",
+      "hits": 2,
+      "total_legs": 5,
+      "leg_results": [
+        "✓",
+        "✗",
+        "✓",
+        "✗",
+        "✗"
+      ],
+      "payout_sek": null,
+      "status": "2 rätt",
+      "cost_sek": 576
+    },
+    {
+      "date": "2026-03-20",
+      "mode": "union",
+      "game_id": "V4_2026-03-20_54_4",
+      "game_type": "V4",
+      "track": "Århus",
+      "hits": 3,
+      "total_legs": 4,
       "leg_results": [
         "✓",
         "✓",
         "✓",
+        "✗"
+      ],
+      "payout_sek": null,
+      "status": "3 rätt",
+      "cost_sek": 288
+    },
+    {
+      "date": "2026-03-20",
+      "mode": "union",
+      "game_id": "V5_2026-03-20_54_2",
+      "game_type": "V5",
+      "track": "Århus",
+      "hits": 4,
+      "total_legs": 5,
+      "leg_results": [
+        "✓",
         "✗",
         "✓",
-        "✗"
+        "✓",
+        "✓"
       ],
       "payout_sek": null,
       "status": "4 rätt",
-      "cost_sek": 216
+      "cost_sek": 288
     },
     {
-      "date": "2026-03-19",
+      "date": "2026-03-20",
       "mode": "union",
-      "game_id": "V3_2026-03-19_16_8",
-      "game_type": "V3",
-      "track": "Gävle",
-      "hits": 2,
-      "total_legs": 3,
-      "leg_results": [
-        "✓",
-        "✓",
-        "✗"
-      ],
-      "payout_sek": null,
-      "status": "2 rätt",
-      "cost_sek": 180
-    },
-    {
-      "date": "2026-03-19",
-      "mode": "union",
-      "game_id": "V5_2026-03-19_81_6",
-      "game_type": "V5",
-      "track": "Forus",
-      "hits": 3,
-      "total_legs": 5,
-      "leg_results": [
-        "✗",
-        "✗",
-        "✓",
-        "✓",
-        "✓"
-      ],
-      "payout_sek": null,
-      "status": "3 rätt",
-      "cost_sek": 144
-    },
-    {
-      "date": "2026-03-19",
-      "mode": "union",
-      "game_id": "V64_2026-03-19_16_4",
-      "game_type": "V64",
-      "track": "Gävle",
-      "hits": 5,
-      "total_legs": 6,
-      "leg_results": [
-        "✓",
-        "✓",
-        "✓",
-        "✗",
-        "✓",
-        "✓"
-      ],
-      "payout_sek": 26,
-      "status": "5 rätt — utdelning",
-      "cost_sek": 162
-    },
-    {
-      "date": "2026-03-19",
-      "mode": "union",
-      "game_id": "V4_2026-03-19_16_6",
+      "game_id": "V4_2026-03-20_63_1",
       "game_type": "V4",
-      "track": "Gävle",
-      "hits": 3,
-      "total_legs": 4,
-      "leg_results": [
-        "✓",
-        "✗",
-        "✓",
-        "✓"
-      ],
-      "payout_sek": null,
-      "status": "3 rätt",
-      "cost_sek": 96
-    },
-    {
-      "date": "2026-03-19",
-      "mode": "union",
-      "game_id": "dd_2026-03-19_16_8",
-      "game_type": "dd",
-      "track": "Gävle",
-      "hits": 2,
-      "total_legs": 2,
-      "leg_results": [
-        "✓",
-        "✓"
-      ],
-      "payout_sek": 92,
-      "status": "2 rätt — utdelning",
-      "cost_sek": 60
-    },
-    {
-      "date": "2026-03-19",
-      "mode": "union",
-      "game_id": "V65_2026-03-19_81_3",
-      "game_type": "V65",
-      "track": "Forus",
-      "hits": 2,
-      "total_legs": 6,
-      "leg_results": [
-        "✗",
-        "✗",
-        "✓",
-        "✗",
-        "✗",
-        "✓"
-      ],
-      "payout_sek": null,
-      "status": "2 rätt",
-      "cost_sek": 243
-    },
-    {
-      "date": "2026-03-19",
-      "mode": "union",
-      "game_id": "V4_2026-03-19_81_1",
-      "game_type": "V4",
-      "track": "Forus",
-      "hits": 2,
+      "track": "Vincennes",
+      "hits": 4,
       "total_legs": 4,
       "leg_results": [
         "✓",
         "✓",
-        "✗",
-        "✗"
+        "✓",
+        "✓"
       ],
-      "payout_sek": null,
-      "status": "2 rätt",
-      "cost_sek": 216
+      "payout_sek": 526,
+      "status": "4 rätt — utdelning",
+      "cost_sek": 192
     }
   ],
   "wraps": [
     {
       "date": "2026-03-20",
-      "title": "V3 Romme — 1/3 rätt",
+      "title": "dd Halmstad — 1/2 rätt",
+      "summary": "1 av 2 rätt. Ingen utdelning. Träff i avdelning 1. Miss i avdelning 2."
+    },
+    {
+      "date": "2026-03-20",
+      "title": "V3 Halmstad — 1/3 rätt",
+      "summary": "1 av 3 rätt. Ingen utdelning. Träff i avdelning 3. Miss i avdelning 1, 2.",
+      "winning_contributions": {
+        "formlines": {
+          "hits": 1,
+          "total": 3
+        }
+      }
+    },
+    {
+      "date": "2026-03-20",
+      "title": "V3 Boden — 1/3 rätt",
       "summary": "1 av 3 rätt. Ingen utdelning. Träff i avdelning 1. Miss i avdelning 2, 3.",
       "winning_contributions": {
         "formlines": {
@@ -222,11 +235,15 @@
     },
     {
       "date": "2026-03-20",
-      "title": "V4 Romme — 2/4 rätt",
-      "summary": "2 av 4 rätt. Ingen utdelning. Träff i avdelning 1, 3. Miss i avdelning 2, 4.",
+      "title": "V4 Boden — 2/4 rätt",
+      "summary": "2 av 4 rätt. Ingen utdelning. Träff i avdelning 2, 4. Miss i avdelning 1, 3.",
       "winning_contributions": {
         "formlines": {
-          "hits": 2,
+          "hits": 1,
+          "total": 4
+        },
+        "v5": {
+          "hits": 1,
           "total": 4
         },
         "tc": {
@@ -234,194 +251,45 @@
           "total": 4
         }
       }
-    },
-    {
-      "date": "2026-03-20",
-      "title": "V65 Romme — 4/6 rätt",
-      "summary": "4 av 6 rätt. Ingen utdelning. Träff i avdelning 1, 2, 3, 5. Miss i avdelning 4, 6.",
-      "winning_contributions": {
-        "formlines": {
-          "hits": 3,
-          "total": 6
-        },
-        "v5": {
-          "hits": 1,
-          "total": 6
-        }
-      }
-    },
-    {
-      "date": "2026-03-19",
-      "title": "V3 Gävle — 2/3 rätt",
-      "summary": "2 av 3 rätt. Ingen utdelning. Träff i avdelning 1, 2. Miss i avdelning 3.",
-      "winning_contributions": {
-        "formlines": {
-          "hits": 2,
-          "total": 3
-        }
-      }
     }
   ],
   "sample_coupons": [
     {
-      "game_id": "V4_2026-03-20_54_4",
-      "game_type": "V4",
-      "track": "Odense",
+      "game_id": "dd_2026-03-20_18_8",
+      "game_type": "dd",
+      "track": "Halmstad",
       "mode": "union",
-      "rows": 144,
-      "cost_sek": 288,
+      "rows": 16,
+      "cost_sek": 160,
       "legs": [
         {
           "leg": 1,
           "picks": [
             {
-              "number": 1,
-              "horse": "Licorice Cash",
-              "source": [
-                "tc"
-              ]
-            },
-            {
               "number": 4,
-              "horse": "Hands Up Cash",
-              "source": [
-                "formlines"
-              ]
-            },
-            {
-              "number": 6,
-              "horse": "Houston Spring",
-              "source": [
-                "formlines",
-                "v5"
-              ]
-            }
-          ]
-        },
-        {
-          "leg": 2,
-          "picks": [
-            {
-              "number": 5,
-              "horse": "Milady",
-              "source": [
-                "v5",
-                "tc"
-              ]
-            },
-            {
-              "number": 3,
-              "horse": "Kohinoor",
+              "horse": "Fuga Dal Bar",
               "source": [
                 "tc"
-              ]
-            },
-            {
-              "number": 9,
-              "horse": "Keep Going Chief",
-              "source": [
-                "tc"
-              ]
-            }
-          ]
-        },
-        {
-          "leg": 3,
-          "picks": [
-            {
-              "number": 6,
-              "horse": "Ique",
-              "source": [
-                "tc"
-              ]
-            },
-            {
-              "number": 8,
-              "horse": "Elmo's Fire",
-              "source": [
-                "tc"
-              ]
-            },
-            {
-              "number": 4,
-              "horse": "Logima Connancy",
-              "source": [
-                "tc"
-              ]
-            },
-            {
-              "number": 1,
-              "horse": "Katja Gardenia",
-              "source": [
-                "v5"
-              ]
-            }
-          ]
-        },
-        {
-          "leg": 4,
-          "picks": [
-            {
-              "number": 4,
-              "horse": "H M's Speedy",
-              "source": [
-                "tc"
-              ]
-            },
-            {
-              "number": 6,
-              "horse": "Maia",
-              "source": [
-                "v5"
               ]
             },
             {
               "number": 7,
-              "horse": "Marilyn",
+              "horse": "Intrigante",
               "source": [
-                "formlines"
-              ]
-            },
-            {
-              "number": 3,
-              "horse": "Eddie Ulkær",
-              "source": [
-                "formlines"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "game_id": "V5_2026-03-20_54_2",
-      "game_type": "V5",
-      "track": "Odense",
-      "mode": "union",
-      "rows": 288,
-      "cost_sek": 288,
-      "legs": [
-        {
-          "leg": 1,
-          "picks": [
-            {
-              "number": 2,
-              "horse": "Luigi Cæsar",
-              "source": [
-                "formlines",
                 "tc"
               ]
             },
             {
-              "number": 4,
-              "horse": "Kadu Moseby",
+              "number": 12,
+              "horse": "Emerald Island",
               "source": [
+                "formlines",
                 "v5"
               ]
             },
             {
               "number": 5,
-              "horse": "Inspired Lights",
+              "horse": "True Lies",
               "source": [
                 "formlines"
               ]
@@ -432,108 +300,30 @@
           "leg": 2,
           "picks": [
             {
-              "number": 5,
-              "horse": "Black Money",
+              "number": 9,
+              "horse": "Magic Jewel",
               "source": [
                 "tc"
-              ]
-            },
-            {
-              "number": 1,
-              "horse": "Keep Dreaming",
-              "source": [
-                "v5"
               ]
             },
             {
               "number": 2,
-              "horse": "Joy Trøjborg",
+              "horse": "Belichic",
               "source": [
                 "formlines"
               ]
             },
             {
-              "number": 6,
-              "horse": "Atlantis",
+              "number": 10,
+              "horse": "First for Me M.H.",
               "source": [
-                "formlines"
-              ]
-            }
-          ]
-        },
-        {
-          "leg": 3,
-          "picks": [
-            {
-              "number": 3,
-              "horse": "Major Love",
-              "source": [
-                "tc"
-              ]
-            },
-            {
-              "number": 4,
-              "horse": "Hands Up Cash",
-              "source": [
-                "formlines"
-              ]
-            },
-            {
-              "number": 5,
-              "horse": "Happy Ice",
-              "source": [
+                "formlines",
                 "v5"
               ]
             },
             {
-              "number": 6,
-              "horse": "Houston Spring",
-              "source": [
-                "formlines"
-              ]
-            }
-          ]
-        },
-        {
-          "leg": 4,
-          "picks": [
-            {
-              "number": 3,
-              "horse": "Kohinoor",
-              "source": [
-                "tc"
-              ]
-            },
-            {
-              "number": 5,
-              "horse": "Milady",
-              "source": [
-                "v5"
-              ]
-            },
-            {
-              "number": 9,
-              "horse": "Keep Going Chief",
-              "source": [
-                "tc"
-              ]
-            }
-          ]
-        },
-        {
-          "leg": 5,
-          "picks": [
-            {
-              "number": 8,
-              "horse": "Elmo's Fire",
-              "source": [
-                "v5",
-                "tc"
-              ]
-            },
-            {
-              "number": 4,
-              "horse": "Logima Connancy",
+              "number": 12,
+              "horse": "Princess Beluga",
               "source": [
                 "tc"
               ]
@@ -543,36 +333,42 @@
       ]
     },
     {
-      "game_id": "V4_2026-03-20_63_1",
-      "game_type": "V4",
-      "track": "Vincennes",
+      "game_id": "V3_2026-03-20_18_8",
+      "game_type": "V3",
+      "track": "Halmstad",
       "mode": "union",
-      "rows": 96,
-      "cost_sek": 192,
+      "rows": 24,
+      "cost_sek": 240,
       "legs": [
         {
           "leg": 1,
           "picks": [
             {
-              "number": 3,
-              "horse": "NONOLETA",
+              "number": 4,
+              "horse": "Fuga Dal Bar",
               "source": [
-                "v5",
                 "tc"
+              ]
+            },
+            {
+              "number": 9,
+              "horse": "Truly Authentic",
+              "source": [
+                "v5"
+              ]
+            },
+            {
+              "number": 12,
+              "horse": "Emerald Island",
+              "source": [
+                "formlines"
               ]
             },
             {
               "number": 5,
-              "horse": "NIGHT DRESS",
+              "horse": "True Lies",
               "source": [
-                "tc"
-              ]
-            },
-            {
-              "number": 2,
-              "horse": "NO ONE",
-              "source": [
-                "tc"
+                "formlines"
               ]
             }
           ]
@@ -581,18 +377,24 @@
           "leg": 2,
           "picks": [
             {
-              "number": 3,
-              "horse": "MACINAGGIO",
+              "number": 2,
+              "horse": "Belichic",
               "source": [
                 "formlines",
                 "tc"
               ]
             },
             {
-              "number": 6,
-              "horse": "MOURILLON",
+              "number": 10,
+              "horse": "First for Me M.H.",
               "source": [
-                "formlines",
+                "formlines"
+              ]
+            },
+            {
+              "number": 12,
+              "horse": "Princess Beluga",
+              "source": [
                 "v5"
               ]
             }
@@ -602,29 +404,54 @@
           "leg": 3,
           "picks": [
             {
-              "number": 2,
-              "horse": "KEMILLA DE BRION",
+              "number": 1,
+              "horse": "Pour Mea Double",
               "source": [
+                "formlines",
+                "v5",
                 "tc"
               ]
             },
             {
-              "number": 5,
-              "horse": "KOUREAS D'ELA",
+              "number": 6,
+              "horse": "Dareios di Poggio",
               "source": [
                 "formlines"
               ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "game_id": "V3_2026-03-20_11_7",
+      "game_type": "V3",
+      "track": "Boden",
+      "mode": "union",
+      "rows": 36,
+      "cost_sek": 360,
+      "legs": [
+        {
+          "leg": 1,
+          "picks": [
+            {
+              "number": 8,
+              "horse": "Waldemar W.F.",
+              "source": [
+                "formlines",
+                "tc"
+              ]
             },
             {
-              "number": 1,
-              "horse": "KORIGANE D'ERABLE",
+              "number": 9,
+              "horse": "Blue Hours",
               "source": [
                 "v5"
               ]
             },
             {
               "number": 7,
-              "horse": "KARMA TEJY",
+              "horse": "Rush'n Caviar",
               "source": [
                 "formlines"
               ]
@@ -632,34 +459,61 @@
           ]
         },
         {
-          "leg": 4,
+          "leg": 2,
           "picks": [
             {
               "number": 1,
-              "horse": "NORGUSSON ATALANTE",
+              "horse": "Man of War L.A.",
               "source": [
                 "tc"
               ]
             },
             {
-              "number": 5,
-              "horse": "NINJA DE L'ENVOL",
+              "number": 4,
+              "horse": "Jo Wilfried Zet",
               "source": [
                 "formlines"
               ]
             },
             {
-              "number": 4,
-              "horse": "NEWTON DES ANDIERS",
+              "number": 3,
+              "horse": "Rim Bay Ray",
+              "source": [
+                "formlines"
+              ]
+            },
+            {
+              "number": 9,
+              "horse": "Cheap Thrill",
               "source": [
                 "v5"
               ]
+            }
+          ]
+        },
+        {
+          "leg": 3,
+          "picks": [
+            {
+              "number": 12,
+              "horse": "Like Magic Sisu",
+              "source": [
+                "tc"
+              ]
             },
             {
-              "number": 7,
-              "horse": "NICKEL DE BAILLE",
+              "number": 2,
+              "horse": "Dual Engine",
               "source": [
                 "formlines"
+              ]
+            },
+            {
+              "number": 1,
+              "horse": "Juventus",
+              "source": [
+                "formlines",
+                "v5"
               ]
             }
           ]

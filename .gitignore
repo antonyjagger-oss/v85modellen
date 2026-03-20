@@ -7,3 +7,4 @@ node_modules/
 projects/
 *.jsonl
 scripts/__pycache__/
+logs/
