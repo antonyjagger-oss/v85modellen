@@ -375,6 +375,22 @@
 
         .results-table .track-col { font-weight: 600; }
 
+        .results-game-type {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 32px;
+            margin-right: 0.55rem;
+            padding: 0.16rem 0.45rem;
+            border-radius: 999px;
+            background: rgba(29, 155, 240, 0.12);
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
         .results-table .hits-col {
             font-family: 'JetBrains Mono', monospace;
             font-weight: 700;
@@ -1143,7 +1159,7 @@
 
                 html += '<tr>';
                 html += '<td class="date-col">' + formatDate(r.date) + '</td>';
-                html += '<td class="track-col">' + escapeHtml(r.track) + '</td>';
+                html += '<td class="track-col"><span class="results-game-type">' + escapeHtml(r.game_type || '') + '</span>' + escapeHtml(r.track) + '</td>';
                 html += '<td class="hits-col" style="' + hitsColor + '">' + r.hits + '/' + r.total_legs + '</td>';
                 html += '<td><div class="leg-checks">';
                 for (const leg of r.leg_results) {
