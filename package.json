@@ -1,0 +1,14 @@
+{
+  "name": "v85modellen",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build": "node -e \"console.log('No build step required')\"",
+    "migrate": "node -e \"console.log('No database migrations required')\""
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

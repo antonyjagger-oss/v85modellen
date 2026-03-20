@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V85Modellen — Datadrivna travspel</title>
+    <meta name="description" content="Union-kuponger, Formlines och modellbaserad analys för dagens spel från ATG. Datadrivna travspel för V75, V86, V64, V4, V5 och fler.">
+    <!-- Canonical -->
+    <link rel="canonical" href="https://v85modellen.se">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="V85Modellen — Datadrivna travspel">
+    <meta property="og:description" content="Union-kuponger, Formlines och modellbaserad analys för dagens spel från ATG. Flera speltyper, en optimerad kupong.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://v85modellen.se">
+    <meta property="og:image" content="https://v85modellen.se/logo.jpg">
+    <meta property="og:image:alt" content="V85Modellen logotyp — datadrivna travspel">
+    <meta property="og:site_name" content="V85Modellen">
+    <meta property="og:locale" content="sv_SE">
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@v85Modellen">
+    <meta name="twitter:title" content="V85Modellen — Datadrivna travspel">
+    <meta name="twitter:description" content="Union-kuponger, Formlines och modellbaserad analys för dagens spel från ATG. Datadrivna travspel för V75, V86, V64, V4, V5 och fler.">
+    <meta name="twitter:image" content="https://v85modellen.se/logo.jpg">
+    <meta name="twitter:image:alt" content="V85Modellen — datadrivna travspel">
+
+    <!-- Additional SEO -->
+    <meta name="keywords" content="V85 modellen, travspel, harness racing, ATG tips, V75, V86, V64, V4 tips, Union-kuponger, Formlines, travspel analys, datadrivna tips, ATG modell">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="V85Modellen">
+
+    <link rel="icon" type="image/jpeg" href="/logo.jpg">
+    <meta name="theme-color" content="#0f1419">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0f1419;
+            --bg-elevated: #15202b;
+            --bg-card: #192734;
+            --border: #253341;
+            --border-light: #2f3e4d;
+            --text: #e7e9ea;
+            --text-secondary: #8b98a5;
+            --text-muted: #5b6b7a;
+            --accent: #1d9bf0;
+            --accent-hover: #1a8cd8;
+            --green: #00c853;
+            --green-dim: rgba(0, 200, 83, 0.12);
+            --red: #f4212e;
+            --red-dim: rgba(244, 33, 46, 0.12);
+            --gold: #ffd700;
+            --gold-dim: rgba(255, 215, 0, 0.12);
+            --purple: #7856ff;
+            --purple-dim: rgba(120, 86, 255, 0.10);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 0 1.5rem;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 20, 25, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-left { display: flex; align-items: center; gap: 0.75rem; }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 800;
+            font-size: 1.15rem;
+            letter-spacing: -0.03em;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .nav-logo img {
+            width: 38px;
+            height: 38px;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+        .nav-logo span { color: var(--accent); }
+
+        .nav-badge {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--accent);
+            background: rgba(29, 155, 240, 0.12);
+            padding: 0.2rem 0.55rem;
+            border-radius: 4px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .nav-links { display: flex; align-items: center; gap: 1.25rem; }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--text); }
+
+        .nav-cta {
+            background: var(--accent) !important;
+            color: #fff !important;
+            padding: 0.45rem 1rem;
+            border-radius: 20px;
+            font-weight: 600 !important;
+            font-size: 0.8rem !important;
+            transition: background 0.2s !important;
+        }
+
+        .nav-cta:hover { background: var(--accent-hover) !important; }
+
+        .nav-social { display: flex; gap: 0.75rem; align-items: center; }
+
+        .nav-social a {
+            color: var(--text-muted);
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-social a:hover { color: var(--text); }
+
+        /* ── CONTAINER ── */
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            padding: 7.5rem 0 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(29, 155, 240, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--green);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-eyebrow .dot {
+            width: 7px;
+            height: 7px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 2s ease infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.85); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero h1 .accent { color: var(--accent); }
+
+        .hero-tagline {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 580px;
+            margin: 0 auto 2rem;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        .hero-cta-row {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent);
+            color: #fff;
+            padding: 0.75rem 1.75rem;
+            border-radius: 24px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: var(--text-secondary);
+            padding: 0.75rem 1.75rem;
+            border-radius: 24px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-muted);
+            color: var(--text);
+        }
+
+        /* ── SECTION HEADERS ── */
+        .section-header {
+            padding: 4rem 0 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.4rem;
+        }
+
+        /* ── RESULTS TABLE ── */
+        .results-wrap { overflow-x: auto; margin-bottom: 3rem; }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        .results-table th {
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        .results-table td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        .results-table tr:hover td { background: var(--bg-elevated); }
+
+        .results-table .date-col {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .results-table .track-col { font-weight: 600; }
+
+        .results-table .hits-col {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+        }
+
+        .results-table .payout-col {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            color: var(--green);
+        }
+
+        .leg-checks {
+            display: flex;
+            gap: 3px;
+        }
+
+        .leg-check {
+            width: 22px;
+            height: 22px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .leg-hit {
+            background: var(--green-dim);
+            color: var(--green);
+        }
+
+        .leg-miss {
+            background: var(--red-dim);
+            color: var(--red);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 600;
+        }
+
+        .status-win {
+            background: var(--green-dim);
+            color: var(--green);
+        }
+
+        .status-jackpot {
+            background: var(--gold-dim);
+            color: var(--gold);
+        }
+
+        .status-partial {
+            background: rgba(139, 152, 165, 0.1);
+            color: var(--text-secondary);
+        }
+
+        /* ── WRAPS (Daily Summary) ── */
+        .wrap-cards { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 3rem; }
+
+        .wrap-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: border-color 0.2s;
+        }
+
+        .wrap-card:hover { border-color: var(--border-light); }
+
+        .wrap-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .wrap-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        .wrap-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: -0.01em;
+        }
+
+        .wrap-summary {
+            color: var(--text-secondary);
+            font-size: 0.87rem;
+            line-height: 1.65;
+            margin-bottom: 1.25rem;
+        }
+
+        .signal-bars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .signal-bar {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            padding: 0.65rem 0.85rem;
+        }
+
+        .signal-bar-label {
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.35rem;
+        }
+
+        .signal-bar-value {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .signal-bar-track {
+            flex: 1;
+            height: 4px;
+            background: var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .signal-bar-fill {
+            height: 100%;
+            border-radius: 2px;
+            transition: width 0.6s ease;
+        }
+
+        .signal-bar-fill.formlines { background: var(--accent); }
+        .signal-bar-fill.v5 { background: var(--purple); }
+        .signal-bar-fill.tc { background: var(--green); }
+        .signal-bar-fill.odds { background: var(--gold); }
+
+        .signal-bar-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text);
+            min-width: 28px;
+            text-align: right;
+        }
+
+        /* ── SAMPLE COUPONS ── */
+        .coupon-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .coupon-header {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .coupon-info { display: flex; align-items: center; gap: 1rem; }
+
+        .coupon-game-type {
+            font-weight: 800;
+            font-size: 1rem;
+            color: var(--accent);
+        }
+
+        .coupon-track {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .coupon-meta {
+            display: flex;
+            gap: 1.25rem;
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+        }
+
+        .coupon-meta span {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .coupon-meta strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .coupon-legs { padding: 0; }
+
+        .coupon-leg {
+            display: flex;
+            align-items: flex-start;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            gap: 1rem;
+        }
+
+        .coupon-leg:last-child { border-bottom: none; }
+
+        .leg-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            min-width: 40px;
+            padding-top: 0.15rem;
+        }
+
+        .leg-picks { display: flex; flex-direction: column; gap: 0.4rem; flex: 1; }
+
+        .pick-row {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+
+        .pick-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 0.82rem;
+            color: var(--text);
+            background: var(--bg-elevated);
+            width: 26px;
+            height: 26px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pick-horse {
+            font-weight: 500;
+            font-size: 0.87rem;
+        }
+
+        .pick-sources {
+            display: flex;
+            gap: 4px;
+            margin-left: auto;
+        }
+
+        .source-tag {
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .source-formlines { background: rgba(29, 155, 240, 0.15); color: var(--accent); }
+        .source-v5 { background: var(--purple-dim); color: var(--purple); }
+        .source-tc { background: var(--green-dim); color: var(--green); }
+        .source-odds { background: var(--gold-dim); color: var(--gold); }
+
+        /* ── ABOUT ── */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .about-cell {
+            background: var(--bg-card);
+            padding: 2rem;
+        }
+
+        .about-cell-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .about-cell h3 {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .about-cell p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.65;
+        }
+
+        .about-full {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .about-full p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.75;
+            max-width: 700px;
+        }
+
+        .about-full p + p { margin-top: 1rem; }
+
+        .about-full strong { color: var(--text); font-weight: 600; }
+
+        /* ── PRICING CTA ── */
+        .pricing-section {
+            padding: 4rem 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border: 2px solid var(--accent);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            max-width: 480px;
+            margin: 2rem auto 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--purple), var(--green));
+        }
+
+        .pricing-alpha-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--gold);
+            background: var(--gold-dim);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-amount {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+
+        .pricing-amount span {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .pricing-period {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-features {
+            text-align: left;
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--green);
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .pricing-cta {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+            border: none;
+            border-radius: 12px;
+            text-decoration: none;
+            text-align: center;
+            transition: background 0.2s;
+            cursor: pointer;
+        }
+
+        .pricing-cta:hover { background: var(--accent-hover); }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .footer-links a:hover { color: var(--text); }
+
+        .footer-copy {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .footer-copy span { color: var(--accent); font-weight: 600; }
+
+        /* ── LOADING STATE ── */
+        .skeleton {
+            background: linear-gradient(90deg, var(--bg-elevated) 25%, var(--bg-card) 50%, var(--bg-elevated) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 6px;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .loading-message {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* ── MOBILE ── */
+        @media (max-width: 768px) {
+            nav { padding: 0 1rem; }
+            .nav-links { display: none; }
+            .container { padding: 0 1rem; }
+            .hero { padding: 6rem 0 2rem; }
+            .hero h1 { font-size: 2rem; }
+            .hero-tagline { font-size: 0.95rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .wrap-header { flex-direction: column; }
+            .signal-bars { grid-template-columns: 1fr 1fr; }
+            .coupon-header { flex-direction: column; align-items: flex-start; }
+            .coupon-leg { flex-direction: column; gap: 0.5rem; }
+            .leg-num { min-width: auto; }
+            .pick-sources { margin-left: 0; }
+            .results-table { font-size: 0.78rem; }
+            .results-table th, .results-table td { padding: 0.65rem 0.6rem; }
+            .pricing-card { padding: 2rem 1.5rem; }
+            .pricing-amount { font-size: 2.8rem; }
+            .section-header { padding: 3rem 0 1.5rem; }
+            .hero-cta-row { flex-direction: column; align-items: center; }
+        }
+
+        @media (max-width: 480px) {
+            .leg-checks { flex-wrap: wrap; }
+            .signal-bars { grid-template-columns: 1fr; }
+        }
+
+        /* ── SCROLL ANIMATIONS ── */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "V85Modellen",
+      "url": "https://v85modellen.se",
+      "logo": "https://v85modellen.se/logo.jpg",
+      "description": "Datadrivna travspel — Union-kuponger, Formlines och modellbaserad analys för ATG-spel. Optimerade kuponger för V75, V86, V64, V4, V5 och fler.",
+      "sameAs": [
+        "https://x.com/v85Modellen",
+        "https://www.patreon.com/c/V85Modellen"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "V85Modellen",
+      "url": "https://v85modellen.se",
+      "description": "Datadrivna tips och kuponger för ATG travspel — V85 modellen analyserar Formlines, Union-signal, V5-signal och Odds för optimala kuponger.",
+      "inLanguage": "sv"
+    }
+    </script>
+</head>
+<body>
+    <!-- NAV -->
+    <nav>
+        <div class="nav-left">
+            <a href="/" class="nav-logo"><img src="/logo.jpg" alt="V85Modellen" width="32" height="32">V85<span>Modellen</span></a>
+            <div class="nav-badge">Alpha</div>
+        </div>
+        <div class="nav-links">
+            <a href="#resultat">Resultat</a>
+            <a href="#sammanfattning">Sammanfattning</a>
+            <a href="#kuponger">Kuponger</a>
+            <a href="#modellen">Om modellen</a>
+            <a href="https://www.patreon.com/c/V85Modellen" target="_blank" rel="noopener" class="nav-cta">Bli medlem →</a>
+        </div>
+        <div class="nav-social">
+            <a href="https://x.com/v85Modellen" target="_blank" rel="noopener" title="X / Twitter" aria-label="X / Twitter">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-eyebrow">
+                <span class="dot"></span>
+                Modellen är live
+            </div>
+            <h1>V85Modellen —<br><span class="accent">Datadrivna travspel</span></h1>
+            <p class="hero-tagline" id="hero-tagline">Union-kuponger, Formlines och modellbaserad analys för dagens spel från ATG.</p>
+            <div class="hero-cta-row">
+                <a href="https://www.patreon.com/c/V85Modellen" target="_blank" rel="noopener" class="btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    Bli medlem — 49 kr/mån
+                </a>
+                <a href="#resultat" class="btn-secondary">Se resultat ↓</a>
+            </div>
+        </section>
+
+        <!-- SENASTE RESULTAT -->
+        <section id="resultat">
+            <div class="section-header fade-in">
+                <div class="section-label">Senaste resultat</div>
+                <div class="section-title">Hur modellen presterar</div>
+                <div class="section-subtitle">Alla speltyper — uppdateras efter varje omgång</div>
+            </div>
+            <div class="results-wrap fade-in" id="results-container">
+                <div class="loading-message">Laddar resultat...</div>
+            </div>
+        </section>
+
+        <!-- DAGLIG SAMMANFATTNING -->
+        <section id="sammanfattning">
+            <div class="section-header fade-in">
+                <div class="section-label">Daglig sammanfattning</div>
+                <div class="section-title">Analys efter varje omgång</div>
+                <div class="section-subtitle">Vilka signaler som levererade — och varför</div>
+            </div>
+            <div class="wrap-cards fade-in" id="wraps-container">
+                <div class="loading-message">Laddar sammanfattningar...</div>
+            </div>
+        </section>
+
+        <!-- EXEMPELKUPONGER -->
+        <section id="kuponger">
+            <div class="section-header fade-in">
+                <div class="section-label">Exempelkuponger</div>
+                <div class="section-title">Så byggs kupongerna</div>
+                <div class="section-subtitle">Varje val motiverat av modellsignaler</div>
+            </div>
+            <div class="fade-in" id="coupons-container">
+                <div class="loading-message">Laddar kuponger...</div>
+            </div>
+        </section>
+
+        <!-- OM MODELLEN -->
+        <section id="modellen">
+            <div class="section-header fade-in">
+                <div class="section-label">Om modellen</div>
+                <div class="section-title">Fyra signaler, en kupong</div>
+                <div class="section-subtitle">Så fungerar V85Modellen</div>
+            </div>
+
+            <div class="about-grid fade-in">
+                <div class="about-cell">
+                    <div class="about-cell-icon">📊</div>
+                    <h3>Formlines</h3>
+                    <p>Analyserar historisk form, löpningstidens utveckling och positionsspel. Identifierar hästar i stigande form och filtrerar bort de som toppat.</p>
+                </div>
+                <div class="about-cell">
+                    <div class="about-cell-icon">🔗</div>
+                    <h3>Union-signal</h3>
+                    <p>Kombinerar flera oberoende modeller till en ensemble-signal. Där modellerna är eniga finns de starkaste spikarna. Oenighet = bredda.</p>
+                </div>
+                <div class="about-cell">
+                    <div class="about-cell-icon">🎯</div>
+                    <h3>V5 / Kontextuell</h3>
+                    <p>Tar hänsyn till banklass, spårkvalitet, kuskvariabel och andra kontextuella faktorer som rena formmodeller missar.</p>
+                </div>
+                <div class="about-cell">
+                    <div class="about-cell-icon">📈</div>
+                    <h3>Odds-signal</h3>
+                    <p>Jämför modellens egna sannolikheter mot marknadsodds. Hittar hästar som marknaden undervärderar — värde-picks som höjer utdelningen.</p>
+                </div>
+            </div>
+
+            <div class="about-full fade-in">
+                <p><strong>V85Modellen</strong> är ett modellbaserat system för svensk trav som täcker flera speltyper från ATG. Istället för att förlita sig på en enda källa kombinerar vi fyra oberoende signaler: formlines, union-ensemble, kontextuell analys och odds-värdering.</p>
+                <p>Varje signal bidrar med sin styrka. Formlines fångar trenden, union-signalen hittar konsensus, den kontextuella modellen viktar faktorer som rena formmodeller missar, och odds-signalen identifierar var marknaden har fel. Resultatet är kuponger som är <strong>bredare där osäkerheten är stor</strong> och <strong>smalare där modellerna är eniga</strong>.</p>
+                <p>Systemet är byggt av en travintresserad dataingenjör — inte ett spelbolag. Målet är ett transparent, ärligt verktyg för travspelaren som vill ha data bakom sina beslut istället för magkänsla.</p>
+            </div>
+        </section>
+
+        <!-- PRICING CTA -->
+        <section class="pricing-section" id="priser">
+            <div class="section-label">Medlemskap</div>
+            <div class="section-title">Gå med i alpha-gruppen</div>
+            <div class="section-subtitle">Tidigt pris — låst så länge du är kvar</div>
+
+            <div class="pricing-card fade-in">
+                <div class="pricing-alpha-badge">⚡ Alpha-pris</div>
+                <div class="pricing-amount" id="pricing-amount">49 <span>kr</span></div>
+                <div class="pricing-period">per månad via Patreon</div>
+                <ul class="pricing-features">
+                    <li>Kuponger för dagens spel innan spelstopp</li>
+                    <li>Daglig sammanfattning och analys</li>
+                    <li>Signalkällor per avdelning</li>
+                    <li>Direkt leverans via Telegram</li>
+                    <li>Alpha-pris låst — höjs för nya medlemmar</li>
+                </ul>
+                <a href="https://www.patreon.com/c/V85Modellen" target="_blank" rel="noopener" class="pricing-cta">Bli medlem på Patreon →</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-links">
+            <a href="https://www.patreon.com/c/V85Modellen" target="_blank" rel="noopener">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M15.386.524c-4.764 0-8.64 3.876-8.64 8.64 0 4.75 3.876 8.613 8.64 8.613 4.75 0 8.614-3.864 8.614-8.613C24 4.4 20.136.524 15.386.524zM.003 23.537h4.22V.524H.003z"/></svg>
+                Patreon
+            </a>
+            <a href="https://x.com/v85Modellen" target="_blank" rel="noopener">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                @v85Modellen
+            </a>
+        </div>
+        <div class="footer-copy"><span>V85Modellen</span> — Prediktiv analys för svensk trav</div>
+    </footer>
+
+    <!-- Data loader & renderer -->
+    <script>
+    (function() {
+        'use strict';
+
+        const FEED_URL = '/data/feed.json';
+
+        // ── Helpers ──
+        function formatDate(dateStr) {
+            const d = new Date(dateStr + 'T00:00:00');
+            const months = ['jan', 'feb', 'mar', 'apr', 'maj', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec'];
+            return d.getDate() + ' ' + months[d.getMonth()];
+        }
+
+        function formatSEK(amount) {
+            if (!amount) return '—';
+            return amount.toLocaleString('sv-SE') + ' kr';
+        }
+
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        // ── Render Results ──
+        function renderResults(results) {
+            if (!results || results.length === 0) {
+                return '<div class="loading-message">Inga resultat ännu</div>';
+            }
+
+            let html = '<table class="results-table"><thead><tr>';
+            html += '<th>Datum</th><th>Bana</th><th>Rätt</th><th>Avdelningar</th><th>Utdelning</th><th>Status</th>';
+            html += '</tr></thead><tbody>';
+
+            for (const r of results) {
+                const hitsColor = r.hits === r.total_legs ? 'color:var(--gold)' :
+                                  r.hits >= r.total_legs - 1 ? 'color:var(--green)' : '';
+
+                const statusClass = r.payout_sek && r.hits === r.total_legs ? 'status-jackpot' :
+                                    r.payout_sek ? 'status-win' : 'status-partial';
+
+                html += '<tr>';
+                html += '<td class="date-col">' + formatDate(r.date) + '</td>';
+                html += '<td class="track-col">' + escapeHtml(r.track) + '</td>';
+                html += '<td class="hits-col" style="' + hitsColor + '">' + r.hits + '/' + r.total_legs + '</td>';
+                html += '<td><div class="leg-checks">';
+                for (const leg of r.leg_results) {
+                    if (leg === '✓') {
+                        html += '<span class="leg-check leg-hit">✓</span>';
+                    } else {
+                        html += '<span class="leg-check leg-miss">✗</span>';
+                    }
+                }
+                html += '</div></td>';
+                html += '<td class="payout-col">' + formatSEK(r.payout_sek) + '</td>';
+                html += '<td><span class="status-badge ' + statusClass + '">' + escapeHtml(r.status) + '</span></td>';
+                html += '</tr>';
+            }
+
+            html += '</tbody></table>';
+            return html;
+        }
+
+        // ── Render Wraps ──
+        function renderWraps(wraps) {
+            if (!wraps || wraps.length === 0) {
+                return '<div class="loading-message">Inga sammanfattningar ännu</div>';
+            }
+
+            let html = '';
+            for (const w of wraps) {
+                html += '<div class="wrap-card">';
+                html += '<div class="wrap-header">';
+                html += '<div class="wrap-title">' + escapeHtml(w.title) + '</div>';
+                html += '<div class="wrap-date">' + formatDate(w.date) + '</div>';
+                html += '</div>';
+                html += '<div class="wrap-summary">' + escapeHtml(w.summary) + '</div>';
+
+                if (w.winning_contributions) {
+                    html += '<div class="signal-bars">';
+                    const signals = [
+                        { key: 'formlines', label: 'Formlines', cls: 'formlines' },
+                        { key: 'v5', label: 'V5', cls: 'v5' },
+                        { key: 'tc', label: 'TC', cls: 'tc' },
+                        { key: 'odds', label: 'Odds', cls: 'odds' }
+                    ];
+                    for (const s of signals) {
+                        const data = w.winning_contributions[s.key];
+                        if (data) {
+                            const pct = Math.round((data.hits / data.total) * 100);
+                            html += '<div class="signal-bar">';
+                            html += '<div class="signal-bar-label">' + s.label + '</div>';
+                            html += '<div class="signal-bar-value">';
+                            html += '<div class="signal-bar-track"><div class="signal-bar-fill ' + s.cls + '" style="width:' + pct + '%"></div></div>';
+                            html += '<div class="signal-bar-num">' + data.hits + '/' + data.total + '</div>';
+                            html += '</div></div>';
+                        }
+                    }
+                    html += '</div>';
+                }
+
+                html += '</div>';
+            }
+            return html;
+        }
+
+        // ── Render Coupons ──
+        function renderCoupons(coupons) {
+            if (!coupons || coupons.length === 0) {
+                return '<div class="loading-message">Inga exempelkuponger ännu</div>';
+            }
+
+            let html = '';
+            for (const c of coupons) {
+                html += '<div class="coupon-card">';
+                html += '<div class="coupon-header">';
+                html += '<div class="coupon-info">';
+                html += '<span class="coupon-game-type">' + escapeHtml(c.game_type) + '</span>';
+                html += '<span class="coupon-track">' + escapeHtml(c.track) + '</span>';
+                html += '</div>';
+                html += '<div class="coupon-meta">';
+                html += '<span><strong>Rader:</strong> ' + c.rows + '</span>';
+                html += '<span><strong>Kostnad:</strong> ' + c.cost_sek + ' kr</span>';
+                html += '<span><strong>Läge:</strong> ' + escapeHtml(c.mode) + '</span>';
+                html += '</div></div>';
+
+                html += '<div class="coupon-legs">';
+                for (const leg of c.legs) {
+                    html += '<div class="coupon-leg">';
+                    html += '<div class="leg-num">AVD ' + leg.leg + '</div>';
+                    html += '<div class="leg-picks">';
+                    for (const pick of leg.picks) {
+                        html += '<div class="pick-row">';
+                        html += '<span class="pick-number">' + pick.number + '</span>';
+                        html += '<span class="pick-horse">' + escapeHtml(pick.horse) + '</span>';
+                        html += '<span class="pick-sources">';
+                        for (const src of pick.source) {
+                            html += '<span class="source-tag source-' + src + '">' + src + '</span>';
+                        }
+                        html += '</span></div>';
+                    }
+                    html += '</div></div>';
+                }
+                html += '</div></div>';
+            }
+            return html;
+        }
+
+        // ── Fetch & Render ──
+        async function loadFeed() {
+            try {
+                const res = await fetch(FEED_URL);
+                if (!res.ok) throw new Error('Feed not found');
+                const feed = await res.json();
+
+                // Update brand
+                if (feed.brand && feed.brand.tagline) {
+                    const taglineEl = document.getElementById('hero-tagline');
+                    if (taglineEl) taglineEl.textContent = feed.brand.tagline;
+                }
+
+                // Update price
+                if (feed.stats && feed.stats.alpha_price_sek_per_month) {
+                    const priceEl = document.getElementById('pricing-amount');
+                    if (priceEl) priceEl.innerHTML = feed.stats.alpha_price_sek_per_month + ' <span>kr</span>';
+                }
+
+                // Render sections
+                document.getElementById('results-container').innerHTML = renderResults(feed.recent_results);
+                document.getElementById('wraps-container').innerHTML = renderWraps(feed.wraps);
+                document.getElementById('coupons-container').innerHTML = renderCoupons(feed.sample_coupons);
+
+            } catch (err) {
+                console.error('Failed to load feed:', err);
+                document.getElementById('results-container').innerHTML = '<div class="loading-message">Kunde inte ladda data</div>';
+                document.getElementById('wraps-container').innerHTML = '<div class="loading-message">Kunde inte ladda data</div>';
+                document.getElementById('coupons-container').innerHTML = '<div class="loading-message">Kunde inte ladda data</div>';
+            }
+        }
+
+        // ── Scroll Animations ──
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+            document.querySelectorAll('.fade-in').forEach(function(el) {
+                observer.observe(el);
+            });
+        }
+
+        // ── Init ──
+        document.addEventListener('DOMContentLoaded', function() {
+            loadFeed();
+            initScrollAnimations();
+        });
+    })();
+    </script>
+</body>
+</html>

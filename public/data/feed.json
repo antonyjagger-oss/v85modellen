@@ -1,0 +1,177 @@
+{
+  "brand": {
+    "name": "V85Modellen",
+    "tagline": "Union-kuponger, Formlines och modellbaserade travspel"
+  },
+  "links": {
+    "patreon": "https://www.patreon.com/c/V85Modellen",
+    "x": "https://x.com/v85Modellen"
+  },
+  "stats": {
+    "updated_at": "2026-03-18T14:30:00Z",
+    "alpha_price_sek_per_month": 49
+  },
+  "recent_results": [
+    {
+      "date": "2026-03-15",
+      "mode": "union",
+      "game_id": "V85-2026-03-15",
+      "game_type": "V86",
+      "track": "Solvalla",
+      "hits": 6,
+      "total_legs": 8,
+      "leg_results": ["✓", "✓", "✓", "✗", "✓", "✓", "✗", "✓"],
+      "payout_sek": null,
+      "status": "6 rätt"
+    },
+    {
+      "date": "2026-03-12",
+      "mode": "union",
+      "game_id": "V85-2026-03-12",
+      "game_type": "V86",
+      "track": "Åby",
+      "hits": 7,
+      "total_legs": 8,
+      "leg_results": ["✓", "✓", "✓", "✓", "✗", "✓", "✓", "✓"],
+      "payout_sek": 4250,
+      "status": "7 rätt — utdelning"
+    },
+    {
+      "date": "2026-03-08",
+      "mode": "union",
+      "game_id": "V85-2026-03-08",
+      "game_type": "V86",
+      "track": "Mantorp",
+      "hits": 5,
+      "total_legs": 8,
+      "leg_results": ["✓", "✗", "✓", "✓", "✗", "✓", "✗", "✓"],
+      "payout_sek": null,
+      "status": "5 rätt"
+    },
+    {
+      "date": "2026-03-05",
+      "mode": "union",
+      "game_id": "V86-2026-03-05",
+      "game_type": "V86",
+      "track": "Bergsåker",
+      "hits": 8,
+      "total_legs": 8,
+      "leg_results": ["✓", "✓", "✓", "✓", "✓", "✓", "✓", "✓"],
+      "payout_sek": 31580,
+      "status": "8 rätt — jackpot!"
+    },
+    {
+      "date": "2026-03-01",
+      "mode": "union",
+      "game_id": "V85-2026-03-01",
+      "game_type": "V86",
+      "track": "Jägersro",
+      "hits": 6,
+      "total_legs": 8,
+      "leg_results": ["✓", "✗", "✓", "✓", "✓", "✗", "✓", "✓"],
+      "payout_sek": null,
+      "status": "6 rätt"
+    },
+    {
+      "date": "2026-02-26",
+      "mode": "union",
+      "game_id": "V85-2026-02-26",
+      "game_type": "V86",
+      "track": "Romme",
+      "hits": 7,
+      "total_legs": 8,
+      "leg_results": ["✓", "✓", "✓", "✓", "✓", "✗", "✓", "✓"],
+      "payout_sek": 6890,
+      "status": "7 rätt — utdelning"
+    }
+  ],
+  "wraps": [
+    {
+      "date": "2026-03-15",
+      "title": "V86 Solvalla — 6/8 rätt, modellen levererade på favoritsidan",
+      "summary": "Stark omgång med tydliga signaler på tre avdelningar. Formlines pekade rätt i avd 1, 3 och 8. Union-signalen breddade effektivt i avd 5 men bomben i avd 4 och 7 var utanför modellens räckvidd. Totalt en lönsam kupong trots missade avdelningar.",
+      "winning_contributions": {
+        "formlines": { "hits": 4, "total": 8 },
+        "v5": { "hits": 2, "total": 8 },
+        "tc": { "hits": 3, "total": 8 },
+        "odds": { "hits": 1, "total": 8 }
+      }
+    },
+    {
+      "date": "2026-03-12",
+      "title": "V86 Åby — 7/8 rätt, 4 250 kr utdelning",
+      "summary": "En av årets starkare omgångar. TC-modellen identifierade rätt nyckelhäst i avd 2 och odds-signalen fångade en 12-gångare i avd 6. Enda missen var avd 5 där hela fältet blev fel. Utdelning 4 250 kr per andel.",
+      "winning_contributions": {
+        "formlines": { "hits": 3, "total": 8 },
+        "v5": { "hits": 3, "total": 8 },
+        "tc": { "hits": 5, "total": 8 },
+        "odds": { "hits": 2, "total": 8 }
+      }
+    },
+    {
+      "date": "2026-03-05",
+      "title": "V86 Bergsåker — ALLA RÄTT! 31 580 kr utdelning",
+      "summary": "Perfekt omgång. Modellerna var eniga om favoriter i 5 avdelningar och lyckades bredda rätt i de tre öppna. V5-signalen var avgörande i avd 3 och 6 där den pekade ut hästar som övriga signaler missade. Historisk dag för V85Modellen.",
+      "winning_contributions": {
+        "formlines": { "hits": 5, "total": 8 },
+        "v5": { "hits": 6, "total": 8 },
+        "tc": { "hits": 4, "total": 8 },
+        "odds": { "hits": 3, "total": 8 }
+      }
+    }
+  ],
+  "sample_coupons": [
+    {
+      "game_id": "V86-DEMO-2026",
+      "game_type": "V86",
+      "track": "Solvalla",
+      "mode": "union",
+      "rows": 864,
+      "cost_sek": 432,
+      "legs": [
+        {
+          "leg": 1,
+          "picks": [
+            { "number": 3, "horse": "Global Adventure", "source": ["formlines", "tc"] },
+            { "number": 7, "horse": "Disco Volante", "source": ["v5"] }
+          ]
+        },
+        {
+          "leg": 2,
+          "picks": [
+            { "number": 1, "horse": "Mellby Free", "source": ["formlines", "v5", "tc"] }
+          ]
+        },
+        {
+          "leg": 3,
+          "picks": [
+            { "number": 5, "horse": "Hail Mary", "source": ["odds"] },
+            { "number": 9, "horse": "Face Time Bourbon", "source": ["formlines"] },
+            { "number": 11, "horse": "Extreme", "source": ["v5", "tc"] }
+          ]
+        },
+        {
+          "leg": 4,
+          "picks": [
+            { "number": 2, "horse": "Don Fanucci Zet", "source": ["formlines", "v5"] },
+            { "number": 4, "horse": "Cyber Lane", "source": ["tc"] },
+            { "number": 8, "horse": "Aramis", "source": ["odds"] }
+          ]
+        },
+        {
+          "leg": 5,
+          "picks": [
+            { "number": 6, "horse": "Propulsion", "source": ["formlines", "tc", "odds"] }
+          ]
+        },
+        {
+          "leg": 6,
+          "picks": [
+            { "number": 1, "horse": "Readly Express", "source": ["formlines"] },
+            { "number": 10, "horse": "Ringostarr Tull", "source": ["v5", "tc"] }
+          ]
+        }
+      ]
+    }
+  ]
+}
