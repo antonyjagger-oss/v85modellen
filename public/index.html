@@ -340,6 +340,11 @@
             margin-top: 0.25rem;
         }
 
+        .rolling-stat-sub.payout-positive {
+            color: var(--green);
+            font-weight: 700;
+        }
+
         .section-note {
             display: inline-flex;
             align-items: center;
@@ -1154,14 +1159,14 @@
 
             return [
                 ['Avgjorda spel', stats.union_games_settled || 0, stats.rolling_window_days + ' dagar'],
-                ['Vinster', stats.union_wins || 0, 'med utdelning'],
+                ['Vinster', stats.union_wins || 0, stats.union_total_payout_sek ? '+' + formatSEK(stats.union_total_payout_sek) : 'med utdelning', !!stats.union_total_payout_sek],
                 ['Near misses', stats.union_near_misses || 0, 'en rätt ifrån'],
                 ['Fullträffar', stats.union_perfect_hits || 0, 'alla ben rätt']
             ].map(function(item) {
                 return '<div class="rolling-stat">' +
                     '<div class="rolling-stat-label">' + escapeHtml(item[0]) + '</div>' +
                     '<div class="rolling-stat-value">' + escapeHtml(String(item[1])) + '</div>' +
-                    '<div class="rolling-stat-sub">' + escapeHtml(item[2]) + '</div>' +
+                    '<div class="rolling-stat-sub' + (item[3] ? ' payout-positive' : '') + '">' + escapeHtml(item[2]) + '</div>' +
                     '</div>';
             }).join('');
         }
