@@ -297,6 +297,19 @@
             letter-spacing: -0.03em;
         }
 
+        .section-title.with-icon {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+        }
+
+        .section-title.with-icon img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            display: block;
+        }
+
         .section-subtitle {
             color: var(--text-secondary);
             font-size: 0.9rem;
@@ -356,6 +369,13 @@
             color: var(--accent);
             font-size: 0.78rem;
             font-weight: 600;
+        }
+
+        .section-note img {
+            width: 16px;
+            height: 16px;
+            object-fit: contain;
+            display: block;
         }
 
         .results-table {
@@ -1039,9 +1059,9 @@
         <section id="kuponger">
             <div class="section-header fade-in">
                 <div class="section-label">Senaste kuponger</div>
-                <div class="section-title">Faktiska union-kuponger</div>
+                <div class="section-title with-icon"><img src="/union-icon.svg" alt="Union icon">Faktiska union-kuponger</div>
                 <div class="section-subtitle">Direkt från senaste frysta körningarna</div>
-                <div class="section-note">Alpha-medlemmar får dagens union-kuponger före spelstopp</div>
+                <div class="section-note"><img src="/union-icon.svg" alt="Union icon">Alpha-medlemmar får dagens union-kuponger före spelstopp</div>
             </div>
             <div class="fade-in" id="coupons-container">
                 <div class="loading-message">Laddar kuponger...</div>
