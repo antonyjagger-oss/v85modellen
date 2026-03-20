@@ -2,10 +2,15 @@
 import argparse
 import json
 import sqlite3
+import sys
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Optional
+
+sys.path.insert(0, "/home/dodge/v75")
+
+from coupon_evaluator import evaluate_game_coupon
 
 
 def parse_args():
@@ -167,7 +172,7 @@ def fetch_latest_union_coupons(cur: sqlite3.Cursor, limit: int = 3) -> List[sqli
     ).fetchall()
 
 
-def build_recent_result(cur: sqlite3.Cursor, row: sqlite3.Row) -> Optional[dict]:
+def build_recent_result(cur: sqlite3.Cursor, row: sqlite3.Row, db_path: str) -> Optional[dict]:
     winners = fetch_leg_winners(cur, row["meet_id"])
     if not winners:
         return None
@@ -185,18 +190,17 @@ def build_recent_result(cur: sqlite3.Cursor, row: sqlite3.Row) -> Optional[dict]
             hits += 1
         leg_results.append("✓" if hit else "✗")
 
-    payout_row = cur.execute(
-        """
-        SELECT payout
-        FROM game_payouts
-        WHERE game_id = ? AND correct = ?
-        LIMIT 1
-        """,
-        (row["meet_id"], hits),
-    ).fetchone()
     payout_sek = None
-    if payout_row and payout_row["payout"] is not None:
-        payout_sek = int(round(float(payout_row["payout"]) / 100.0))
+    evaluation = evaluate_game_coupon(
+        db_path,
+        row["meet_id"],
+        row["game_type"],
+        mode="union",
+    )
+    if evaluation and evaluation.get("payout") is not None:
+        payout_value = float(evaluation["payout"])
+        if payout_value > 0:
+            payout_sek = int(round(payout_value))
 
     status = f"{hits} rätt"
     if payout_sek:
@@ -218,8 +222,8 @@ def build_recent_result(cur: sqlite3.Cursor, row: sqlite3.Row) -> Optional[dict]
     }
 
 
-def build_wrap(cur: sqlite3.Cursor, row: sqlite3.Row) -> Optional[dict]:
-    result = build_recent_result(cur, row)
+def build_wrap(cur: sqlite3.Cursor, row: sqlite3.Row, db_path: str) -> Optional[dict]:
+    result = build_recent_result(cur, row, db_path)
     if not result:
         return None
 
@@ -300,7 +304,7 @@ def build_coupon(cur: sqlite3.Cursor, row: sqlite3.Row) -> Optional[dict]:
     }
 
 
-def build_feed(con: sqlite3.Connection, price: int) -> dict:
+def build_feed(con: sqlite3.Connection, price: int, db_path: str) -> dict:
     cur = con.cursor()
     recent_run_rows = fetch_recent_completed_union_runs(cur)
     coupon_rows = fetch_latest_union_coupons(cur, limit=3)
@@ -308,10 +312,10 @@ def build_feed(con: sqlite3.Connection, price: int) -> dict:
     recent_results = []
     wraps = []
     for row in recent_run_rows:
-        item = build_recent_result(cur, row)
+        item = build_recent_result(cur, row, db_path)
         if item:
             recent_results.append(item)
-        wrap = build_wrap(cur, row)
+        wrap = build_wrap(cur, row, db_path)
         if wrap:
             wraps.append(wrap)
 
@@ -368,7 +372,7 @@ def main():
     args = parse_args()
     con = connect_db(args.db)
     try:
-        feed = build_feed(con, args.price)
+        feed = build_feed(con, args.price, args.db)
     finally:
         con.close()
 
