@@ -1152,6 +1152,7 @@
         }
 
         // ── Render Results ──
+        // Keep this block easy to spot when verifying Render deploys.
         function renderRollingSummary(stats) {
             if (!stats || !stats.rolling_window_days) {
                 return '<div class="loading-message">Ingen 7-dagarsdata ännu</div>';
