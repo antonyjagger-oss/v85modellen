@@ -8,7 +8,7 @@
     "x": "https://x.com/v85Modellen"
   },
   "stats": {
-    "updated_at": "2026-03-20T21:59:05.032562Z",
+    "updated_at": "2026-03-21T00:02:54.562668Z",
     "alpha_price_sek_per_month": 49,
     "rolling_window_days": 7,
     "union_games_settled": 44,
@@ -20,22 +20,6 @@
     "union_roi_pct": -17.6
   },
   "recent_results": [
-    {
-      "date": "2026-03-20",
-      "mode": "union",
-      "game_id": "dd_2026-03-20_18_8",
-      "game_type": "dd",
-      "track": "Halmstad",
-      "hits": 1,
-      "total_legs": 2,
-      "leg_results": [
-        "✓",
-        "✗"
-      ],
-      "payout_sek": null,
-      "status": "1 rätt",
-      "cost_sek": 160
-    },
     {
       "date": "2026-03-20",
       "mode": "union",
@@ -91,6 +75,26 @@
     {
       "date": "2026-03-20",
       "mode": "union",
+      "game_id": "V64_2026-03-20_18_4",
+      "game_type": "V64",
+      "track": "Halmstad",
+      "hits": 2,
+      "total_legs": 6,
+      "leg_results": [
+        "✓",
+        "✗",
+        "✗",
+        "✗",
+        "✓",
+        "✗"
+      ],
+      "payout_sek": null,
+      "status": "2 rätt",
+      "cost_sek": 216
+    },
+    {
+      "date": "2026-03-20",
+      "mode": "union",
       "game_id": "V4_2026-03-20_18_6",
       "game_type": "V4",
       "track": "Halmstad",
@@ -109,22 +113,18 @@
     {
       "date": "2026-03-20",
       "mode": "union",
-      "game_id": "V64_2026-03-20_18_4",
-      "game_type": "V64",
+      "game_id": "dd_2026-03-20_18_8",
+      "game_type": "dd",
       "track": "Halmstad",
-      "hits": 2,
-      "total_legs": 6,
+      "hits": 1,
+      "total_legs": 2,
       "leg_results": [
-        "✓",
-        "✗",
-        "✗",
-        "✗",
         "✓",
         "✗"
       ],
       "payout_sek": null,
-      "status": "2 rätt",
-      "cost_sek": 216
+      "status": "1 rätt",
+      "cost_sek": 160
     },
     {
       "date": "2026-03-20",
@@ -150,7 +150,7 @@
       "mode": "union",
       "game_id": "V4_2026-03-20_54_4",
       "game_type": "V4",
-      "track": "Århus",
+      "track": "Odense",
       "hits": 3,
       "total_legs": 4,
       "leg_results": [
@@ -161,25 +161,6 @@
       ],
       "payout_sek": null,
       "status": "3 rätt",
-      "cost_sek": 288
-    },
-    {
-      "date": "2026-03-20",
-      "mode": "union",
-      "game_id": "V5_2026-03-20_54_2",
-      "game_type": "V5",
-      "track": "Århus",
-      "hits": 4,
-      "total_legs": 5,
-      "leg_results": [
-        "✓",
-        "✗",
-        "✓",
-        "✓",
-        "✓"
-      ],
-      "payout_sek": null,
-      "status": "4 rätt",
       "cost_sek": 288
     },
     {
@@ -199,14 +180,28 @@
       "payout_sek": 526,
       "status": "4 rätt — utdelning",
       "cost_sek": 192
+    },
+    {
+      "date": "2026-03-20",
+      "mode": "union",
+      "game_id": "V5_2026-03-20_54_2",
+      "game_type": "V5",
+      "track": "Odense",
+      "hits": 4,
+      "total_legs": 5,
+      "leg_results": [
+        "✓",
+        "✗",
+        "✓",
+        "✓",
+        "✓"
+      ],
+      "payout_sek": null,
+      "status": "4 rätt",
+      "cost_sek": 288
     }
   ],
   "wraps": [
-    {
-      "date": "2026-03-20",
-      "title": "dd Halmstad — 1/2 rätt",
-      "summary": "1 av 2 rätt. Ingen utdelning. Träff i avdelning 1. Miss i avdelning 2."
-    },
     {
       "date": "2026-03-20",
       "title": "V3 Halmstad — 1/3 rätt",
@@ -251,87 +246,28 @@
           "total": 4
         }
       }
+    },
+    {
+      "date": "2026-03-20",
+      "title": "V64 Halmstad — 2/6 rätt",
+      "summary": "2 av 6 rätt. Ingen utdelning. Träff i avdelning 1, 5. Miss i avdelning 2, 3, 4, 6.",
+      "winning_contributions": {
+        "formlines": {
+          "hits": 1,
+          "total": 6
+        },
+        "v5": {
+          "hits": 1,
+          "total": 6
+        },
+        "tc": {
+          "hits": 2,
+          "total": 6
+        }
+      }
     }
   ],
   "sample_coupons": [
-    {
-      "game_id": "dd_2026-03-20_18_8",
-      "game_type": "dd",
-      "track": "Halmstad",
-      "mode": "union",
-      "rows": 16,
-      "cost_sek": 160,
-      "legs": [
-        {
-          "leg": 1,
-          "picks": [
-            {
-              "number": 4,
-              "horse": "Fuga Dal Bar",
-              "source": [
-                "tc"
-              ]
-            },
-            {
-              "number": 7,
-              "horse": "Intrigante",
-              "source": [
-                "tc"
-              ]
-            },
-            {
-              "number": 12,
-              "horse": "Emerald Island",
-              "source": [
-                "formlines",
-                "v5"
-              ]
-            },
-            {
-              "number": 5,
-              "horse": "True Lies",
-              "source": [
-                "formlines"
-              ]
-            }
-          ]
-        },
-        {
-          "leg": 2,
-          "picks": [
-            {
-              "number": 9,
-              "horse": "Magic Jewel",
-              "source": [
-                "tc"
-              ]
-            },
-            {
-              "number": 2,
-              "horse": "Belichic",
-              "source": [
-                "formlines"
-              ]
-            },
-            {
-              "number": 10,
-              "horse": "First for Me M.H.",
-              "source": [
-                "formlines",
-                "v5"
-              ]
-            },
-            {
-              "number": 12,
-              "horse": "Princess Beluga",
-              "source": [
-                "tc"
-              ]
-            }
-          ]
-        }
-      ]
-    },
     {
       "game_id": "V3_2026-03-20_18_8",
       "game_type": "V3",
@@ -514,6 +450,136 @@
               "source": [
                 "formlines",
                 "v5"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "game_id": "V4_2026-03-20_11_6",
+      "game_type": "V4",
+      "track": "Boden",
+      "mode": "union",
+      "rows": 144,
+      "cost_sek": 288,
+      "legs": [
+        {
+          "leg": 1,
+          "picks": [
+            {
+              "number": 4,
+              "horse": "Miss Lemonade",
+              "source": [
+                "tc"
+              ]
+            },
+            {
+              "number": 6,
+              "horse": "Healthy Meal",
+              "source": [
+                "formlines"
+              ]
+            },
+            {
+              "number": 5,
+              "horse": "Global Dream Trip",
+              "source": [
+                "formlines",
+                "v5"
+              ]
+            }
+          ]
+        },
+        {
+          "leg": 2,
+          "picks": [
+            {
+              "number": 8,
+              "horse": "Waldemar W.F.",
+              "source": [
+                "formlines",
+                "tc"
+              ]
+            },
+            {
+              "number": 3,
+              "horse": "Going Romantic",
+              "source": [
+                "v5"
+              ]
+            },
+            {
+              "number": 7,
+              "horse": "Rush'n Caviar",
+              "source": [
+                "formlines"
+              ]
+            }
+          ]
+        },
+        {
+          "leg": 3,
+          "picks": [
+            {
+              "number": 1,
+              "horse": "Man of War L.A.",
+              "source": [
+                "tc"
+              ]
+            },
+            {
+              "number": 4,
+              "horse": "Jo Wilfried Zet",
+              "source": [
+                "formlines"
+              ]
+            },
+            {
+              "number": 3,
+              "horse": "Rim Bay Ray",
+              "source": [
+                "formlines"
+              ]
+            },
+            {
+              "number": 10,
+              "horse": "Mellby Medusa",
+              "source": [
+                "v5"
+              ]
+            }
+          ]
+        },
+        {
+          "leg": 4,
+          "picks": [
+            {
+              "number": 7,
+              "horse": "Magical Survivor",
+              "source": [
+                "tc"
+              ]
+            },
+            {
+              "number": 2,
+              "horse": "Dual Engine",
+              "source": [
+                "formlines"
+              ]
+            },
+            {
+              "number": 5,
+              "horse": "Olindos",
+              "source": [
+                "v5"
+              ]
+            },
+            {
+              "number": 1,
+              "horse": "Juventus",
+              "source": [
+                "formlines"
               ]
             }
           ]
