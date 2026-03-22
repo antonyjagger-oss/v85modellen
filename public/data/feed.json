@@ -8,7 +8,7 @@
     "x": "https://x.com/v85Modellen"
   },
   "stats": {
-    "updated_at": "2026-03-22T14:28:53.407478Z",
+    "updated_at": "2026-03-22T15:08:53.495672Z",
     "alpha_price_sek_per_month": 49,
     "rolling_window_days": 7,
     "union_games_settled": 58,
@@ -192,7 +192,7 @@
       "date": "2026-03-21",
       "mode": "union",
       "game_id": "dd_2026-03-21_6_11",
-      "game_type": "dd",
+      "game_type": "DD",
       "track": "Åby",
       "hits": 0,
       "total_legs": 2,
@@ -208,6 +208,7 @@
   "wraps": [
     {
       "date": "2026-03-22",
+      "game_type": "V3",
       "title": "V3 Bollnäs — 1/3 rätt",
       "summary": "1 av 3 rätt. Ingen utdelning. Träff i avdelning 2. Miss i avdelning 1, 3.",
       "winning_contributions": {
@@ -223,6 +224,7 @@
     },
     {
       "date": "2026-03-22",
+      "game_type": "V5",
       "title": "V5 Bollnäs — 2/5 rätt",
       "summary": "2 av 5 rätt. Ingen utdelning. Träff i avdelning 1, 4. Miss i avdelning 2, 3, 5.",
       "winning_contributions": {
@@ -242,6 +244,7 @@
     },
     {
       "date": "2026-03-22",
+      "game_type": "V4",
       "title": "V4 Bollnäs — 2/4 rätt",
       "summary": "2 av 4 rätt. Ingen utdelning. Träff i avdelning 1, 4. Miss i avdelning 2, 3.",
       "winning_contributions": {
@@ -257,6 +260,7 @@
     },
     {
       "date": "2026-03-21",
+      "game_type": "V65",
       "title": "V65 Momarken — 3/6 rätt",
       "summary": "3 av 6 rätt. Ingen utdelning. Träff i avdelning 1, 4, 6. Miss i avdelning 2, 3, 5.",
       "winning_contributions": {
@@ -276,6 +280,118 @@
     }
   ],
   "sample_coupons": [
+    {
+      "game_id": "V4_2026-03-22_8_7",
+      "game_type": "V4",
+      "track": "Axevalla",
+      "mode": "union",
+      "rows": 48,
+      "cost_sek": 96,
+      "legs": [
+        {
+          "leg": 1,
+          "picks": [
+            {
+              "number": 1,
+              "horse": "Intensity",
+              "source": [
+                "tc"
+              ]
+            },
+            {
+              "number": 14,
+              "horse": "Cassius Clay D.E.",
+              "source": [
+                "v5"
+              ]
+            },
+            {
+              "number": 9,
+              "horse": "Ivan Mauger",
+              "source": [
+                "formlines"
+              ]
+            },
+            {
+              "number": 6,
+              "horse": "First to Fight",
+              "source": [
+                "formlines"
+              ]
+            }
+          ]
+        },
+        {
+          "leg": 2,
+          "picks": [
+            {
+              "number": 3,
+              "horse": "Seventh Avenue",
+              "source": [
+                "formlines",
+                "tc"
+              ]
+            },
+            {
+              "number": 7,
+              "horse": "Halina",
+              "source": [
+                "formlines",
+                "v5"
+              ]
+            }
+          ]
+        },
+        {
+          "leg": 3,
+          "picks": [
+            {
+              "number": 4,
+              "horse": "Budets Hildur",
+              "source": [
+                "tc"
+              ]
+            },
+            {
+              "number": 1,
+              "horse": "Chaplin",
+              "source": [
+                "formlines"
+              ]
+            },
+            {
+              "number": 2,
+              "horse": "Mr Zimmerman",
+              "source": [
+                "formlines",
+                "v5"
+              ]
+            }
+          ]
+        },
+        {
+          "leg": 4,
+          "picks": [
+            {
+              "number": 6,
+              "horse": "Viral",
+              "source": [
+                "formlines",
+                "tc"
+              ]
+            },
+            {
+              "number": 7,
+              "horse": "Heartbeat Ellie",
+              "source": [
+                "formlines",
+                "v5"
+              ]
+            }
+          ]
+        }
+      ]
+    },
     {
       "game_id": "GS75_2026-03-22_8_4",
       "game_type": "GS75",
@@ -568,133 +684,2830 @@
           ]
         }
       ]
-    },
-    {
-      "game_id": "V4_2026-03-22_88_5",
-      "game_type": "V4",
-      "track": "Berlin",
-      "mode": "union",
-      "rows": 108,
-      "cost_sek": 216,
-      "legs": [
-        {
-          "leg": 1,
-          "picks": [
-            {
-              "number": 4,
-              "horse": "Xandor",
-              "source": [
-                "formlines",
-                "tc"
-              ]
-            },
-            {
-              "number": 1,
-              "horse": "Gigio Effe",
-              "source": [
-                "v5"
-              ]
-            },
-            {
-              "number": 6,
-              "horse": "Uberlandia",
-              "source": [
-                "formlines"
-              ]
-            }
-          ]
-        },
-        {
-          "leg": 2,
-          "picks": [
-            {
-              "number": 4,
-              "horse": "Olivia Greenwood",
-              "source": [
-                "tc"
-              ]
-            },
-            {
-              "number": 6,
-              "horse": "Parodie Vrijthout",
-              "source": [
-                "tc"
-              ]
-            },
-            {
-              "number": 1,
-              "horse": "Don Timoko",
-              "source": [
-                "v5"
-              ]
-            }
-          ]
-        },
-        {
-          "leg": 3,
-          "picks": [
-            {
-              "number": 3,
-              "horse": "Tyron Hill",
-              "source": [
-                "tc"
-              ]
-            },
-            {
-              "number": 6,
-              "horse": "GEILES LEBEN HOME",
-              "source": [
-                "tc"
-              ]
-            },
-            {
-              "number": 5,
-              "horse": "Cosmea",
-              "source": [
-                "tc"
-              ]
-            },
-            {
-              "number": 1,
-              "horse": "Orkan Bo",
-              "source": [
-                "v5"
-              ]
-            }
-          ]
-        },
-        {
-          "leg": 4,
-          "picks": [
-            {
-              "number": 4,
-              "horse": "Maja Beuckenswijk",
-              "source": [
-                "tc"
-              ]
-            },
-            {
-              "number": 1,
-              "horse": "Amaro",
-              "source": [
-                "v5"
-              ]
-            },
-            {
-              "number": 6,
-              "horse": "Dexter CG",
-              "source": [
-                "tc"
-              ]
-            }
-          ]
-        }
-      ]
     }
   ],
   "performance": {
-    "updated_at": "2026-03-22T14:28:53.407457Z",
+    "updated_at": "2026-03-22T15:08:53.495656Z",
     "union_started_on": "2026-03-17",
+    "default_filter": "all",
+    "filters": [
+      {
+        "key": "all",
+        "label": "Alla",
+        "count": 58
+      },
+      {
+        "key": "v85",
+        "label": "V85",
+        "count": 1
+      },
+      {
+        "key": "v86",
+        "label": "V86",
+        "count": 1
+      },
+      {
+        "key": "v65",
+        "label": "V65",
+        "count": 3
+      },
+      {
+        "key": "v64",
+        "label": "V64",
+        "count": 3
+      },
+      {
+        "key": "v5",
+        "label": "V5",
+        "count": 11
+      },
+      {
+        "key": "v4",
+        "label": "V4",
+        "count": 22
+      },
+      {
+        "key": "v3",
+        "label": "V3",
+        "count": 12
+      },
+      {
+        "key": "dd",
+        "label": "DD",
+        "count": 5
+      }
+    ],
+    "segments": {
+      "all": {
+        "summary": {
+          "settled_games": 58,
+          "wins": 13,
+          "near_misses": 14,
+          "perfect_hits": 11,
+          "total_cost_sek": 19961,
+          "total_payout_sek": 14636,
+          "roi_pct": -26.7
+        },
+        "rolling": {
+          "window_days": [
+            7,
+            30
+          ],
+          "series": [
+            {
+              "date": "2026-03-17",
+              "win_rate_7d": 66.7,
+              "roi_7d": 28.9,
+              "win_rate_30d": 66.7,
+              "roi_30d": 28.9
+            },
+            {
+              "date": "2026-03-18",
+              "win_rate_7d": 40.0,
+              "roi_7d": 22.4,
+              "win_rate_30d": 40.0,
+              "roi_30d": 22.4
+            },
+            {
+              "date": "2026-03-19",
+              "win_rate_7d": 32.3,
+              "roi_7d": 3.0,
+              "win_rate_30d": 32.3,
+              "roi_30d": 3.0
+            },
+            {
+              "date": "2026-03-20",
+              "win_rate_7d": 25.0,
+              "roi_7d": -17.6,
+              "win_rate_30d": 25.0,
+              "roi_30d": -17.6
+            },
+            {
+              "date": "2026-03-21",
+              "win_rate_7d": 23.6,
+              "roi_7d": -24.8,
+              "win_rate_30d": 23.6,
+              "roi_30d": -24.8
+            },
+            {
+              "date": "2026-03-22",
+              "win_rate_7d": 22.4,
+              "roi_7d": -26.7,
+              "win_rate_30d": 22.4,
+              "roi_30d": -26.7
+            }
+          ]
+        },
+        "recent_results": [
+          {
+            "date": "2026-03-22",
+            "mode": "union",
+            "game_id": "V3_2026-03-22_12_7",
+            "game_type": "V3",
+            "track": "Bollnäs",
+            "hits": 1,
+            "total_legs": 3,
+            "leg_results": [
+              "✗",
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "1 rätt",
+            "cost_sek": 180
+          },
+          {
+            "date": "2026-03-22",
+            "mode": "union",
+            "game_id": "V5_2026-03-22_12_5",
+            "game_type": "V5",
+            "track": "Bollnäs",
+            "hits": 2,
+            "total_legs": 5,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✗",
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "2 rätt",
+            "cost_sek": 162
+          },
+          {
+            "date": "2026-03-22",
+            "mode": "union",
+            "game_id": "V4_2026-03-22_12_2",
+            "game_type": "V4",
+            "track": "Bollnäs",
+            "hits": 2,
+            "total_legs": 4,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✗",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "2 rätt",
+            "cost_sek": 162
+          },
+          {
+            "date": "2026-03-21",
+            "mode": "union",
+            "game_id": "V65_2026-03-21_80_4",
+            "game_type": "V65",
+            "track": "Momarken",
+            "hits": 3,
+            "total_legs": 6,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✗",
+              "✓",
+              "✗",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "3 rätt",
+            "cost_sek": 144
+          },
+          {
+            "date": "2026-03-21",
+            "mode": "union",
+            "game_id": "V4_2026-03-21_80_6",
+            "game_type": "V4",
+            "track": "Momarken",
+            "hits": 2,
+            "total_legs": 4,
+            "leg_results": [
+              "✗",
+              "✓",
+              "✗",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "2 rätt",
+            "cost_sek": 96
+          },
+          {
+            "date": "2026-03-21",
+            "mode": "union",
+            "game_id": "V4_2026-03-21_76_1",
+            "game_type": "V4",
+            "track": "Wolvega",
+            "hits": 4,
+            "total_legs": 4,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✓",
+              "✓"
+            ],
+            "payout_sek": 96,
+            "status": "4 rätt — utdelning",
+            "cost_sek": 288
+          },
+          {
+            "date": "2026-03-21",
+            "mode": "union",
+            "game_id": "V85_2026-03-21_6_5",
+            "game_type": "V85",
+            "track": "Åby",
+            "hits": 3,
+            "total_legs": 8,
+            "leg_results": [
+              "✗",
+              "✗",
+              "✓",
+              "✗",
+              "✗",
+              "✓",
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "3 rätt",
+            "cost_sek": 1152
+          },
+          {
+            "date": "2026-03-21",
+            "mode": "union",
+            "game_id": "V3_2026-03-21_6_10",
+            "game_type": "V3",
+            "track": "Åby",
+            "hits": 1,
+            "total_legs": 3,
+            "leg_results": [
+              "✗",
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "1 rätt",
+            "cost_sek": 180
+          },
+          {
+            "date": "2026-03-21",
+            "mode": "union",
+            "game_id": "V5_2026-03-21_6_8",
+            "game_type": "V5",
+            "track": "Åby",
+            "hits": 0,
+            "total_legs": 5,
+            "leg_results": [
+              "✗",
+              "✗",
+              "✗",
+              "✗",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "0 rätt",
+            "cost_sek": 192
+          },
+          {
+            "date": "2026-03-21",
+            "mode": "union",
+            "game_id": "dd_2026-03-21_6_11",
+            "game_type": "DD",
+            "track": "Åby",
+            "hits": 0,
+            "total_legs": 2,
+            "leg_results": [
+              "✗",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "0 rätt",
+            "cost_sek": 90
+          },
+          {
+            "date": "2026-03-21",
+            "mode": "union",
+            "game_id": "V4_2026-03-21_63_5",
+            "game_type": "V4",
+            "track": "Vincennes",
+            "hits": 1,
+            "total_legs": 4,
+            "leg_results": [
+              "✗",
+              "✗",
+              "✗",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "1 rätt",
+            "cost_sek": 288
+          },
+          {
+            "date": "2026-03-21",
+            "mode": "union",
+            "game_id": "V4_2026-03-21_6_1",
+            "game_type": "V4",
+            "track": "Åby",
+            "hits": 1,
+            "total_legs": 4,
+            "leg_results": [
+              "✗",
+              "✗",
+              "✗",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "1 rätt",
+            "cost_sek": 288
+          },
+          {
+            "date": "2026-03-21",
+            "mode": "union",
+            "game_id": "V4_2026-03-21_54_4",
+            "game_type": "V4",
+            "track": "Odense",
+            "hits": 3,
+            "total_legs": 4,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✓",
+              "✓"
+            ],
+            "payout_sek": 1539,
+            "status": "3 rätt — utdelning",
+            "cost_sek": 192
+          },
+          {
+            "date": "2026-03-21",
+            "mode": "union",
+            "game_id": "V5_2026-03-21_54_2",
+            "game_type": "V5",
+            "track": "Odense",
+            "hits": 4,
+            "total_legs": 5,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✓",
+              "✗",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "4 rätt",
+            "cost_sek": 768
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "V3_2026-03-20_18_8",
+            "game_type": "V3",
+            "track": "Halmstad",
+            "hits": 1,
+            "total_legs": 3,
+            "leg_results": [
+              "✗",
+              "✗",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "1 rätt",
+            "cost_sek": 240
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "V3_2026-03-20_11_7",
+            "game_type": "V3",
+            "track": "Boden",
+            "hits": 1,
+            "total_legs": 3,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "1 rätt",
+            "cost_sek": 360
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "V4_2026-03-20_11_6",
+            "game_type": "V4",
+            "track": "Boden",
+            "hits": 2,
+            "total_legs": 4,
+            "leg_results": [
+              "✗",
+              "✓",
+              "✗",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "2 rätt",
+            "cost_sek": 288
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "V64_2026-03-20_18_4",
+            "game_type": "V64",
+            "track": "Halmstad",
+            "hits": 2,
+            "total_legs": 6,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✗",
+              "✗",
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "2 rätt",
+            "cost_sek": 216
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "V4_2026-03-20_18_6",
+            "game_type": "V4",
+            "track": "Halmstad",
+            "hits": 1,
+            "total_legs": 4,
+            "leg_results": [
+              "✗",
+              "✗",
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "1 rätt",
+            "cost_sek": 384
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "dd_2026-03-20_18_8",
+            "game_type": "DD",
+            "track": "Halmstad",
+            "hits": 1,
+            "total_legs": 2,
+            "leg_results": [
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "1 rätt",
+            "cost_sek": 160
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "V5_2026-03-20_11_2",
+            "game_type": "V5",
+            "track": "Boden",
+            "hits": 2,
+            "total_legs": 5,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✓",
+              "✗",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "2 rätt",
+            "cost_sek": 576
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "V4_2026-03-20_54_4",
+            "game_type": "V4",
+            "track": "Odense",
+            "hits": 3,
+            "total_legs": 4,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "3 rätt",
+            "cost_sek": 288
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "V4_2026-03-20_63_1",
+            "game_type": "V4",
+            "track": "Vincennes",
+            "hits": 4,
+            "total_legs": 4,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✓",
+              "✓"
+            ],
+            "payout_sek": 526,
+            "status": "4 rätt — utdelning",
+            "cost_sek": 192
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "V5_2026-03-20_54_2",
+            "game_type": "V5",
+            "track": "Odense",
+            "hits": 4,
+            "total_legs": 5,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✓",
+              "✓",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "4 rätt",
+            "cost_sek": 288
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "V3_2026-03-20_23_6",
+            "game_type": "V3",
+            "track": "Romme",
+            "hits": 1,
+            "total_legs": 3,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "1 rätt",
+            "cost_sek": 360
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "V65_2026-03-20_23_2",
+            "game_type": "V65",
+            "track": "Romme",
+            "hits": 4,
+            "total_legs": 6,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✓",
+              "✗",
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "4 rätt",
+            "cost_sek": 216
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "V4_2026-03-20_23_4",
+            "game_type": "V4",
+            "track": "Romme",
+            "hits": 2,
+            "total_legs": 4,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "2 rätt",
+            "cost_sek": 96
+          },
+          {
+            "date": "2026-03-19",
+            "mode": "union",
+            "game_id": "V3_2026-03-19_16_8",
+            "game_type": "V3",
+            "track": "Gävle",
+            "hits": 2,
+            "total_legs": 3,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "2 rätt",
+            "cost_sek": 180
+          },
+          {
+            "date": "2026-03-19",
+            "mode": "union",
+            "game_id": "V5_2026-03-19_81_6",
+            "game_type": "V5",
+            "track": "Forus",
+            "hits": 3,
+            "total_legs": 5,
+            "leg_results": [
+              "✗",
+              "✗",
+              "✓",
+              "✓",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "3 rätt",
+            "cost_sek": 144
+          },
+          {
+            "date": "2026-03-19",
+            "mode": "union",
+            "game_id": "V64_2026-03-19_16_4",
+            "game_type": "V64",
+            "track": "Gävle",
+            "hits": 5,
+            "total_legs": 6,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✓",
+              "✗",
+              "✓",
+              "✓"
+            ],
+            "payout_sek": 26,
+            "status": "5 rätt — utdelning",
+            "cost_sek": 162
+          }
+        ],
+        "recent_wraps": [
+          {
+            "date": "2026-03-22",
+            "game_type": "V3",
+            "title": "V3 Bollnäs — 1/3 rätt",
+            "summary": "1 av 3 rätt. Ingen utdelning. Träff i avdelning 2. Miss i avdelning 1, 3.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 1,
+                "total": 3
+              },
+              "tc": {
+                "hits": 1,
+                "total": 3
+              }
+            }
+          },
+          {
+            "date": "2026-03-22",
+            "game_type": "V5",
+            "title": "V5 Bollnäs — 2/5 rätt",
+            "summary": "2 av 5 rätt. Ingen utdelning. Träff i avdelning 1, 4. Miss i avdelning 2, 3, 5.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 1,
+                "total": 5
+              },
+              "v5": {
+                "hits": 1,
+                "total": 5
+              },
+              "tc": {
+                "hits": 2,
+                "total": 5
+              }
+            }
+          },
+          {
+            "date": "2026-03-22",
+            "game_type": "V4",
+            "title": "V4 Bollnäs — 2/4 rätt",
+            "summary": "2 av 4 rätt. Ingen utdelning. Träff i avdelning 1, 4. Miss i avdelning 2, 3.",
+            "winning_contributions": {
+              "v5": {
+                "hits": 1,
+                "total": 4
+              },
+              "tc": {
+                "hits": 1,
+                "total": 4
+              }
+            }
+          },
+          {
+            "date": "2026-03-21",
+            "game_type": "V65",
+            "title": "V65 Momarken — 3/6 rätt",
+            "summary": "3 av 6 rätt. Ingen utdelning. Träff i avdelning 1, 4, 6. Miss i avdelning 2, 3, 5.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 2,
+                "total": 6
+              },
+              "v5": {
+                "hits": 1,
+                "total": 6
+              },
+              "tc": {
+                "hits": 1,
+                "total": 6
+              }
+            }
+          },
+          {
+            "date": "2026-03-21",
+            "game_type": "V4",
+            "title": "V4 Momarken — 2/4 rätt",
+            "summary": "2 av 4 rätt. Ingen utdelning. Träff i avdelning 2, 4. Miss i avdelning 1, 3.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 2,
+                "total": 4
+              },
+              "tc": {
+                "hits": 1,
+                "total": 4
+              }
+            }
+          },
+          {
+            "date": "2026-03-21",
+            "game_type": "V4",
+            "title": "V4 Wolvega — 4/4 rätt  96 kr",
+            "summary": "4 av 4 rätt. Utdelning 96 kr. Träff i avdelning 1, 2, 3, 4.",
+            "winning_contributions": {
+              "v5": {
+                "hits": 3,
+                "total": 4
+              },
+              "tc": {
+                "hits": 1,
+                "total": 4
+              }
+            }
+          },
+          {
+            "date": "2026-03-21",
+            "game_type": "V85",
+            "title": "V85 Åby — 3/8 rätt",
+            "summary": "3 av 8 rätt. Ingen utdelning. Träff i avdelning 3, 6, 7. Miss i avdelning 1, 2, 4, 5, 8.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 2,
+                "total": 8
+              },
+              "v5": {
+                "hits": 1,
+                "total": 8
+              }
+            }
+          },
+          {
+            "date": "2026-03-21",
+            "game_type": "V3",
+            "title": "V3 Åby — 1/3 rätt",
+            "summary": "1 av 3 rätt. Ingen utdelning. Träff i avdelning 2. Miss i avdelning 1, 3.",
+            "winning_contributions": {
+              "v5": {
+                "hits": 1,
+                "total": 3
+              }
+            }
+          }
+        ]
+      },
+      "v85": {
+        "summary": {
+          "settled_games": 1,
+          "wins": 0,
+          "near_misses": 0,
+          "perfect_hits": 0,
+          "total_cost_sek": 1152,
+          "total_payout_sek": 0,
+          "roi_pct": -100.0
+        },
+        "rolling": {
+          "window_days": [
+            7,
+            30
+          ],
+          "series": [
+            {
+              "date": "2026-03-21",
+              "win_rate_7d": 0.0,
+              "roi_7d": -100.0,
+              "win_rate_30d": 0.0,
+              "roi_30d": -100.0
+            }
+          ]
+        },
+        "recent_results": [
+          {
+            "date": "2026-03-21",
+            "mode": "union",
+            "game_id": "V85_2026-03-21_6_5",
+            "game_type": "V85",
+            "track": "Åby",
+            "hits": 3,
+            "total_legs": 8,
+            "leg_results": [
+              "✗",
+              "✗",
+              "✓",
+              "✗",
+              "✗",
+              "✓",
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "3 rätt",
+            "cost_sek": 1152
+          }
+        ],
+        "recent_wraps": [
+          {
+            "date": "2026-03-21",
+            "game_type": "V85",
+            "title": "V85 Åby — 3/8 rätt",
+            "summary": "3 av 8 rätt. Ingen utdelning. Träff i avdelning 3, 6, 7. Miss i avdelning 1, 2, 4, 5, 8.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 2,
+                "total": 8
+              },
+              "v5": {
+                "hits": 1,
+                "total": 8
+              }
+            }
+          }
+        ]
+      },
+      "v86": {
+        "summary": {
+          "settled_games": 1,
+          "wins": 0,
+          "near_misses": 0,
+          "perfect_hits": 0,
+          "total_cost_sek": 324,
+          "total_payout_sek": 0,
+          "roi_pct": -100.0
+        },
+        "rolling": {
+          "window_days": [
+            7,
+            30
+          ],
+          "series": [
+            {
+              "date": "2026-03-18",
+              "win_rate_7d": 0.0,
+              "roi_7d": -100.0,
+              "win_rate_30d": 0.0,
+              "roi_30d": -100.0
+            }
+          ]
+        },
+        "recent_results": [
+          {
+            "date": "2026-03-18",
+            "mode": "union",
+            "game_id": "V86_2026-03-18_40_1",
+            "game_type": "V86",
+            "track": "Bergsåker",
+            "hits": 6,
+            "total_legs": 8,
+            "leg_results": [
+              "✗",
+              "✓",
+              "✓",
+              "✓",
+              "✓",
+              "✓",
+              "✗",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "6 rätt",
+            "cost_sek": 324
+          }
+        ],
+        "recent_wraps": [
+          {
+            "date": "2026-03-18",
+            "game_type": "V86",
+            "title": "V86 Bergsåker — 6/8 rätt",
+            "summary": "6 av 8 rätt. Ingen utdelning. Träff i avdelning 2, 3, 4, 5, 6, 8. Miss i avdelning 1, 7.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 3,
+                "total": 8
+              },
+              "v5": {
+                "hits": 2,
+                "total": 8
+              }
+            }
+          }
+        ]
+      },
+      "v65": {
+        "summary": {
+          "settled_games": 3,
+          "wins": 0,
+          "near_misses": 0,
+          "perfect_hits": 0,
+          "total_cost_sek": 603,
+          "total_payout_sek": 0,
+          "roi_pct": -100.0
+        },
+        "rolling": {
+          "window_days": [
+            7,
+            30
+          ],
+          "series": [
+            {
+              "date": "2026-03-19",
+              "win_rate_7d": 0.0,
+              "roi_7d": -100.0,
+              "win_rate_30d": 0.0,
+              "roi_30d": -100.0
+            },
+            {
+              "date": "2026-03-20",
+              "win_rate_7d": 0.0,
+              "roi_7d": -100.0,
+              "win_rate_30d": 0.0,
+              "roi_30d": -100.0
+            },
+            {
+              "date": "2026-03-21",
+              "win_rate_7d": 0.0,
+              "roi_7d": -100.0,
+              "win_rate_30d": 0.0,
+              "roi_30d": -100.0
+            }
+          ]
+        },
+        "recent_results": [
+          {
+            "date": "2026-03-21",
+            "mode": "union",
+            "game_id": "V65_2026-03-21_80_4",
+            "game_type": "V65",
+            "track": "Momarken",
+            "hits": 3,
+            "total_legs": 6,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✗",
+              "✓",
+              "✗",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "3 rätt",
+            "cost_sek": 144
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "V65_2026-03-20_23_2",
+            "game_type": "V65",
+            "track": "Romme",
+            "hits": 4,
+            "total_legs": 6,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✓",
+              "✗",
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "4 rätt",
+            "cost_sek": 216
+          },
+          {
+            "date": "2026-03-19",
+            "mode": "union",
+            "game_id": "V65_2026-03-19_81_3",
+            "game_type": "V65",
+            "track": "Forus",
+            "hits": 2,
+            "total_legs": 6,
+            "leg_results": [
+              "✗",
+              "✗",
+              "✓",
+              "✗",
+              "✗",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "2 rätt",
+            "cost_sek": 243
+          }
+        ],
+        "recent_wraps": [
+          {
+            "date": "2026-03-21",
+            "game_type": "V65",
+            "title": "V65 Momarken — 3/6 rätt",
+            "summary": "3 av 6 rätt. Ingen utdelning. Träff i avdelning 1, 4, 6. Miss i avdelning 2, 3, 5.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 2,
+                "total": 6
+              },
+              "v5": {
+                "hits": 1,
+                "total": 6
+              },
+              "tc": {
+                "hits": 1,
+                "total": 6
+              }
+            }
+          },
+          {
+            "date": "2026-03-20",
+            "game_type": "V65",
+            "title": "V65 Romme — 4/6 rätt",
+            "summary": "4 av 6 rätt. Ingen utdelning. Träff i avdelning 1, 2, 3, 5. Miss i avdelning 4, 6.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 3,
+                "total": 6
+              },
+              "v5": {
+                "hits": 1,
+                "total": 6
+              }
+            }
+          },
+          {
+            "date": "2026-03-19",
+            "game_type": "V65",
+            "title": "V65 Forus — 2/6 rätt",
+            "summary": "2 av 6 rätt. Ingen utdelning. Träff i avdelning 3, 6. Miss i avdelning 1, 2, 4, 5.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 2,
+                "total": 6
+              },
+              "tc": {
+                "hits": 1,
+                "total": 6
+              }
+            }
+          }
+        ]
+      },
+      "v64": {
+        "summary": {
+          "settled_games": 3,
+          "wins": 2,
+          "near_misses": 1,
+          "perfect_hits": 1,
+          "total_cost_sek": 2682,
+          "total_payout_sek": 656,
+          "roi_pct": -75.5
+        },
+        "rolling": {
+          "window_days": [
+            7,
+            30
+          ],
+          "series": [
+            {
+              "date": "2026-03-17",
+              "win_rate_7d": 100.0,
+              "roi_7d": -72.7,
+              "win_rate_30d": 100.0,
+              "roi_30d": -72.7
+            },
+            {
+              "date": "2026-03-19",
+              "win_rate_7d": 100.0,
+              "roi_7d": -73.4,
+              "win_rate_30d": 100.0,
+              "roi_30d": -73.4
+            },
+            {
+              "date": "2026-03-20",
+              "win_rate_7d": 66.7,
+              "roi_7d": -75.5,
+              "win_rate_30d": 66.7,
+              "roi_30d": -75.5
+            }
+          ]
+        },
+        "recent_results": [
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "V64_2026-03-20_18_4",
+            "game_type": "V64",
+            "track": "Halmstad",
+            "hits": 2,
+            "total_legs": 6,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✗",
+              "✗",
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "2 rätt",
+            "cost_sek": 216
+          },
+          {
+            "date": "2026-03-19",
+            "mode": "union",
+            "game_id": "V64_2026-03-19_16_4",
+            "game_type": "V64",
+            "track": "Gävle",
+            "hits": 5,
+            "total_legs": 6,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✓",
+              "✗",
+              "✓",
+              "✓"
+            ],
+            "payout_sek": 26,
+            "status": "5 rätt — utdelning",
+            "cost_sek": 162
+          },
+          {
+            "date": "2026-03-17",
+            "mode": "union",
+            "game_id": "V64_2026-03-17_15_4",
+            "game_type": "V64",
+            "track": "Färjestad",
+            "hits": 6,
+            "total_legs": 6,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✓",
+              "✓",
+              "✓",
+              "✓"
+            ],
+            "payout_sek": 630,
+            "status": "6 rätt — utdelning",
+            "cost_sek": 2304
+          }
+        ],
+        "recent_wraps": [
+          {
+            "date": "2026-03-20",
+            "game_type": "V64",
+            "title": "V64 Halmstad — 2/6 rätt",
+            "summary": "2 av 6 rätt. Ingen utdelning. Träff i avdelning 1, 5. Miss i avdelning 2, 3, 4, 6.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 1,
+                "total": 6
+              },
+              "v5": {
+                "hits": 1,
+                "total": 6
+              },
+              "tc": {
+                "hits": 2,
+                "total": 6
+              }
+            }
+          },
+          {
+            "date": "2026-03-19",
+            "game_type": "V64",
+            "title": "V64 Gävle — 5/6 rätt  26 kr",
+            "summary": "5 av 6 rätt. Utdelning 26 kr. Träff i avdelning 1, 2, 3, 5, 6. Miss i avdelning 4.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 4,
+                "total": 6
+              },
+              "v5": {
+                "hits": 1,
+                "total": 6
+              },
+              "tc": {
+                "hits": 3,
+                "total": 6
+              }
+            }
+          },
+          {
+            "date": "2026-03-17",
+            "game_type": "V64",
+            "title": "V64 Färjestad — 6/6 rätt  630 kr",
+            "summary": "6 av 6 rätt. Utdelning 630 kr. Träff i avdelning 1, 2, 3, 4, 5, 6.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 1,
+                "total": 6
+              },
+              "v5": {
+                "hits": 2,
+                "total": 6
+              },
+              "tc": {
+                "hits": 2,
+                "total": 6
+              }
+            }
+          }
+        ]
+      },
+      "v5": {
+        "summary": {
+          "settled_games": 11,
+          "wins": 0,
+          "near_misses": 3,
+          "perfect_hits": 0,
+          "total_cost_sek": 4742,
+          "total_payout_sek": 0,
+          "roi_pct": -100.0
+        },
+        "rolling": {
+          "window_days": [
+            7,
+            30
+          ],
+          "series": [
+            {
+              "date": "2026-03-17",
+              "win_rate_7d": 0.0,
+              "roi_7d": -100.0,
+              "win_rate_30d": 0.0,
+              "roi_30d": -100.0
+            },
+            {
+              "date": "2026-03-18",
+              "win_rate_7d": 0.0,
+              "roi_7d": -100.0,
+              "win_rate_30d": 0.0,
+              "roi_30d": -100.0
+            },
+            {
+              "date": "2026-03-19",
+              "win_rate_7d": 0.0,
+              "roi_7d": -100.0,
+              "win_rate_30d": 0.0,
+              "roi_30d": -100.0
+            },
+            {
+              "date": "2026-03-20",
+              "win_rate_7d": 0.0,
+              "roi_7d": -100.0,
+              "win_rate_30d": 0.0,
+              "roi_30d": -100.0
+            },
+            {
+              "date": "2026-03-21",
+              "win_rate_7d": 0.0,
+              "roi_7d": -100.0,
+              "win_rate_30d": 0.0,
+              "roi_30d": -100.0
+            },
+            {
+              "date": "2026-03-22",
+              "win_rate_7d": 0.0,
+              "roi_7d": -100.0,
+              "win_rate_30d": 0.0,
+              "roi_30d": -100.0
+            }
+          ]
+        },
+        "recent_results": [
+          {
+            "date": "2026-03-22",
+            "mode": "union",
+            "game_id": "V5_2026-03-22_12_5",
+            "game_type": "V5",
+            "track": "Bollnäs",
+            "hits": 2,
+            "total_legs": 5,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✗",
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "2 rätt",
+            "cost_sek": 162
+          },
+          {
+            "date": "2026-03-21",
+            "mode": "union",
+            "game_id": "V5_2026-03-21_6_8",
+            "game_type": "V5",
+            "track": "Åby",
+            "hits": 0,
+            "total_legs": 5,
+            "leg_results": [
+              "✗",
+              "✗",
+              "✗",
+              "✗",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "0 rätt",
+            "cost_sek": 192
+          },
+          {
+            "date": "2026-03-21",
+            "mode": "union",
+            "game_id": "V5_2026-03-21_54_2",
+            "game_type": "V5",
+            "track": "Odense",
+            "hits": 4,
+            "total_legs": 5,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✓",
+              "✗",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "4 rätt",
+            "cost_sek": 768
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "V5_2026-03-20_11_2",
+            "game_type": "V5",
+            "track": "Boden",
+            "hits": 2,
+            "total_legs": 5,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✓",
+              "✗",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "2 rätt",
+            "cost_sek": 576
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "V5_2026-03-20_54_2",
+            "game_type": "V5",
+            "track": "Odense",
+            "hits": 4,
+            "total_legs": 5,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✓",
+              "✓",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "4 rätt",
+            "cost_sek": 288
+          },
+          {
+            "date": "2026-03-19",
+            "mode": "union",
+            "game_id": "V5_2026-03-19_81_6",
+            "game_type": "V5",
+            "track": "Forus",
+            "hits": 3,
+            "total_legs": 5,
+            "leg_results": [
+              "✗",
+              "✗",
+              "✓",
+              "✓",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "3 rätt",
+            "cost_sek": 144
+          },
+          {
+            "date": "2026-03-19",
+            "mode": "union",
+            "game_id": "V5_2026-03-19_33_4",
+            "game_type": "V5",
+            "track": "Östersund",
+            "hits": 3,
+            "total_legs": 5,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✓",
+              "✗",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "3 rätt",
+            "cost_sek": 216
+          },
+          {
+            "date": "2026-03-18",
+            "mode": "union",
+            "game_id": "V5_2026-03-18_5_2",
+            "game_type": "V5",
+            "track": "Solvalla",
+            "hits": 3,
+            "total_legs": 5,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✓",
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "3 rätt",
+            "cost_sek": 216
+          },
+          {
+            "date": "2026-03-18",
+            "mode": "union",
+            "game_id": "V5_2026-03-18_9_2",
+            "game_type": "V5",
+            "track": "Bergsåker",
+            "hits": 2,
+            "total_legs": 5,
+            "leg_results": [
+              "✗",
+              "✗",
+              "✓",
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "2 rätt",
+            "cost_sek": 324
+          },
+          {
+            "date": "2026-03-18",
+            "mode": "union",
+            "game_id": "V5_2026-03-18_7_3",
+            "game_type": "V5",
+            "track": "Jägersro",
+            "hits": 3,
+            "total_legs": 5,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✓",
+              "✗",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "3 rätt",
+            "cost_sek": 576
+          },
+          {
+            "date": "2026-03-17",
+            "mode": "union",
+            "game_id": "V5_2026-03-17_14_4",
+            "game_type": "V5",
+            "track": "Eskilstuna",
+            "hits": 4,
+            "total_legs": 5,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✓",
+              "✗",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "4 rätt",
+            "cost_sek": 1280
+          }
+        ],
+        "recent_wraps": [
+          {
+            "date": "2026-03-22",
+            "game_type": "V5",
+            "title": "V5 Bollnäs — 2/5 rätt",
+            "summary": "2 av 5 rätt. Ingen utdelning. Träff i avdelning 1, 4. Miss i avdelning 2, 3, 5.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 1,
+                "total": 5
+              },
+              "v5": {
+                "hits": 1,
+                "total": 5
+              },
+              "tc": {
+                "hits": 2,
+                "total": 5
+              }
+            }
+          },
+          {
+            "date": "2026-03-21",
+            "game_type": "V5",
+            "title": "V5 Åby — 0/5 rätt",
+            "summary": "0 av 5 rätt. Ingen utdelning. Miss i avdelning 1, 2, 3, 4, 5."
+          },
+          {
+            "date": "2026-03-21",
+            "game_type": "V5",
+            "title": "V5 Odense — 4/5 rätt",
+            "summary": "4 av 5 rätt. Ingen utdelning. Träff i avdelning 1, 2, 3, 5. Miss i avdelning 4.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 1,
+                "total": 5
+              },
+              "tc": {
+                "hits": 2,
+                "total": 5
+              }
+            }
+          },
+          {
+            "date": "2026-03-20",
+            "game_type": "V5",
+            "title": "V5 Boden — 2/5 rätt",
+            "summary": "2 av 5 rätt. Ingen utdelning. Träff i avdelning 1, 3. Miss i avdelning 2, 4, 5.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 1,
+                "total": 5
+              },
+              "tc": {
+                "hits": 1,
+                "total": 5
+              }
+            }
+          },
+          {
+            "date": "2026-03-20",
+            "game_type": "V5",
+            "title": "V5 Odense — 4/5 rätt",
+            "summary": "4 av 5 rätt. Ingen utdelning. Träff i avdelning 1, 3, 4, 5. Miss i avdelning 2.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 2,
+                "total": 5
+              },
+              "v5": {
+                "hits": 1,
+                "total": 5
+              },
+              "tc": {
+                "hits": 2,
+                "total": 5
+              }
+            }
+          },
+          {
+            "date": "2026-03-19",
+            "game_type": "V5",
+            "title": "V5 Forus — 3/5 rätt",
+            "summary": "3 av 5 rätt. Ingen utdelning. Träff i avdelning 3, 4, 5. Miss i avdelning 1, 2.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 3,
+                "total": 5
+              },
+              "v5": {
+                "hits": 2,
+                "total": 5
+              },
+              "tc": {
+                "hits": 1,
+                "total": 5
+              }
+            }
+          },
+          {
+            "date": "2026-03-19",
+            "game_type": "V5",
+            "title": "V5 Östersund — 3/5 rätt",
+            "summary": "3 av 5 rätt. Ingen utdelning. Träff i avdelning 1, 3, 5. Miss i avdelning 2, 4.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 2,
+                "total": 5
+              },
+              "tc": {
+                "hits": 1,
+                "total": 5
+              }
+            }
+          },
+          {
+            "date": "2026-03-18",
+            "game_type": "V5",
+            "title": "V5 Solvalla — 3/5 rätt",
+            "summary": "3 av 5 rätt. Ingen utdelning. Träff i avdelning 1, 3, 4. Miss i avdelning 2, 5.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 1,
+                "total": 5
+              },
+              "v5": {
+                "hits": 2,
+                "total": 5
+              },
+              "tc": {
+                "hits": 1,
+                "total": 5
+              }
+            }
+          }
+        ]
+      },
+      "v4": {
+        "summary": {
+          "settled_games": 22,
+          "wins": 6,
+          "near_misses": 5,
+          "perfect_hits": 5,
+          "total_cost_sek": 5678,
+          "total_payout_sek": 9206,
+          "roi_pct": 62.1
+        },
+        "rolling": {
+          "window_days": [
+            7,
+            30
+          ],
+          "series": [
+            {
+              "date": "2026-03-17",
+              "win_rate_7d": 50.0,
+              "roi_7d": 100.8,
+              "win_rate_30d": 50.0,
+              "roi_30d": 100.8
+            },
+            {
+              "date": "2026-03-18",
+              "win_rate_7d": 42.9,
+              "roi_7d": 197.0,
+              "win_rate_30d": 42.9,
+              "roi_30d": 197.0
+            },
+            {
+              "date": "2026-03-19",
+              "win_rate_7d": 27.3,
+              "roi_7d": 126.1,
+              "win_rate_30d": 27.3,
+              "roi_30d": 126.1
+            },
+            {
+              "date": "2026-03-20",
+              "win_rate_7d": 25.0,
+              "roi_7d": 73.5,
+              "win_rate_30d": 25.0,
+              "roi_30d": 73.5
+            },
+            {
+              "date": "2026-03-21",
+              "win_rate_7d": 28.6,
+              "roi_7d": 66.9,
+              "win_rate_30d": 28.6,
+              "roi_30d": 66.9
+            },
+            {
+              "date": "2026-03-22",
+              "win_rate_7d": 27.3,
+              "roi_7d": 62.1,
+              "win_rate_30d": 27.3,
+              "roi_30d": 62.1
+            }
+          ]
+        },
+        "recent_results": [
+          {
+            "date": "2026-03-22",
+            "mode": "union",
+            "game_id": "V4_2026-03-22_12_2",
+            "game_type": "V4",
+            "track": "Bollnäs",
+            "hits": 2,
+            "total_legs": 4,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✗",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "2 rätt",
+            "cost_sek": 162
+          },
+          {
+            "date": "2026-03-21",
+            "mode": "union",
+            "game_id": "V4_2026-03-21_80_6",
+            "game_type": "V4",
+            "track": "Momarken",
+            "hits": 2,
+            "total_legs": 4,
+            "leg_results": [
+              "✗",
+              "✓",
+              "✗",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "2 rätt",
+            "cost_sek": 96
+          },
+          {
+            "date": "2026-03-21",
+            "mode": "union",
+            "game_id": "V4_2026-03-21_76_1",
+            "game_type": "V4",
+            "track": "Wolvega",
+            "hits": 4,
+            "total_legs": 4,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✓",
+              "✓"
+            ],
+            "payout_sek": 96,
+            "status": "4 rätt — utdelning",
+            "cost_sek": 288
+          },
+          {
+            "date": "2026-03-21",
+            "mode": "union",
+            "game_id": "V4_2026-03-21_63_5",
+            "game_type": "V4",
+            "track": "Vincennes",
+            "hits": 1,
+            "total_legs": 4,
+            "leg_results": [
+              "✗",
+              "✗",
+              "✗",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "1 rätt",
+            "cost_sek": 288
+          },
+          {
+            "date": "2026-03-21",
+            "mode": "union",
+            "game_id": "V4_2026-03-21_6_1",
+            "game_type": "V4",
+            "track": "Åby",
+            "hits": 1,
+            "total_legs": 4,
+            "leg_results": [
+              "✗",
+              "✗",
+              "✗",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "1 rätt",
+            "cost_sek": 288
+          },
+          {
+            "date": "2026-03-21",
+            "mode": "union",
+            "game_id": "V4_2026-03-21_54_4",
+            "game_type": "V4",
+            "track": "Odense",
+            "hits": 3,
+            "total_legs": 4,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✓",
+              "✓"
+            ],
+            "payout_sek": 1539,
+            "status": "3 rätt — utdelning",
+            "cost_sek": 192
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "V4_2026-03-20_11_6",
+            "game_type": "V4",
+            "track": "Boden",
+            "hits": 2,
+            "total_legs": 4,
+            "leg_results": [
+              "✗",
+              "✓",
+              "✗",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "2 rätt",
+            "cost_sek": 288
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "V4_2026-03-20_18_6",
+            "game_type": "V4",
+            "track": "Halmstad",
+            "hits": 1,
+            "total_legs": 4,
+            "leg_results": [
+              "✗",
+              "✗",
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "1 rätt",
+            "cost_sek": 384
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "V4_2026-03-20_54_4",
+            "game_type": "V4",
+            "track": "Odense",
+            "hits": 3,
+            "total_legs": 4,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "3 rätt",
+            "cost_sek": 288
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "V4_2026-03-20_63_1",
+            "game_type": "V4",
+            "track": "Vincennes",
+            "hits": 4,
+            "total_legs": 4,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✓",
+              "✓"
+            ],
+            "payout_sek": 526,
+            "status": "4 rätt — utdelning",
+            "cost_sek": 192
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "V4_2026-03-20_23_4",
+            "game_type": "V4",
+            "track": "Romme",
+            "hits": 2,
+            "total_legs": 4,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "2 rätt",
+            "cost_sek": 96
+          },
+          {
+            "date": "2026-03-19",
+            "mode": "union",
+            "game_id": "V4_2026-03-19_16_6",
+            "game_type": "V4",
+            "track": "Gävle",
+            "hits": 3,
+            "total_legs": 4,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✓",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "3 rätt",
+            "cost_sek": 96
+          },
+          {
+            "date": "2026-03-19",
+            "mode": "union",
+            "game_id": "V4_2026-03-19_81_1",
+            "game_type": "V4",
+            "track": "Forus",
+            "hits": 2,
+            "total_legs": 4,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✗",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "2 rätt",
+            "cost_sek": 216
+          },
+          {
+            "date": "2026-03-19",
+            "mode": "union",
+            "game_id": "V4_2026-03-19_62_1",
+            "game_type": "V4",
+            "track": "Frankrike",
+            "hits": 3,
+            "total_legs": 4,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✓",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "3 rätt",
+            "cost_sek": 216
+          },
+          {
+            "date": "2026-03-19",
+            "mode": "union",
+            "game_id": "V4_2026-03-19_33_1",
+            "game_type": "V4",
+            "track": "Östersund",
+            "hits": 2,
+            "total_legs": 4,
+            "leg_results": [
+              "✗",
+              "✗",
+              "✓",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "2 rätt",
+            "cost_sek": 216
+          },
+          {
+            "date": "2026-03-18",
+            "mode": "union",
+            "game_id": "V4_2026-03-18_40_5",
+            "game_type": "V4",
+            "track": "Bergsåker",
+            "hits": 3,
+            "total_legs": 4,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✗",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "3 rätt",
+            "cost_sek": 162
+          },
+          {
+            "date": "2026-03-18",
+            "mode": "union",
+            "game_id": "V4_2026-03-18_62_5",
+            "game_type": "V4",
+            "track": "Frankrike",
+            "hits": 1,
+            "total_legs": 4,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✗",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "1 rätt",
+            "cost_sek": 192
+          },
+          {
+            "date": "2026-03-18",
+            "mode": "union",
+            "game_id": "V4_2026-03-18_7_1",
+            "game_type": "V4",
+            "track": "Jägersro",
+            "hits": 4,
+            "total_legs": 4,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✓",
+              "✓"
+            ],
+            "payout_sek": 3318,
+            "status": "4 rätt — utdelning",
+            "cost_sek": 162
+          },
+          {
+            "date": "2026-03-17",
+            "mode": "union",
+            "game_id": "V4_2026-03-17_15_6",
+            "game_type": "V4",
+            "track": "Färjestad",
+            "hits": 4,
+            "total_legs": 4,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✓",
+              "✓"
+            ],
+            "payout_sek": 276,
+            "status": "4 rätt — utdelning",
+            "cost_sek": 288
+          },
+          {
+            "date": "2026-03-17",
+            "mode": "union",
+            "game_id": "V4_2026-03-17_78_1",
+            "game_type": "V4",
+            "track": "Bjerke",
+            "hits": 2,
+            "total_legs": 4,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✗",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "2 rätt",
+            "cost_sek": 384
+          },
+          {
+            "date": "2026-03-17",
+            "mode": "union",
+            "game_id": "V4_2026-03-17_58_1",
+            "game_type": "V4",
+            "track": "Enghien",
+            "hits": 1,
+            "total_legs": 4,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✗",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "1 rätt",
+            "cost_sek": 384
+          },
+          {
+            "date": "2026-03-17",
+            "mode": "union",
+            "game_id": "V4_2026-03-17_14_1",
+            "game_type": "V4",
+            "track": "Eskilstuna",
+            "hits": 4,
+            "total_legs": 4,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✓",
+              "✓"
+            ],
+            "payout_sek": 3451,
+            "status": "4 rätt — utdelning",
+            "cost_sek": 800
+          }
+        ],
+        "recent_wraps": [
+          {
+            "date": "2026-03-22",
+            "game_type": "V4",
+            "title": "V4 Bollnäs — 2/4 rätt",
+            "summary": "2 av 4 rätt. Ingen utdelning. Träff i avdelning 1, 4. Miss i avdelning 2, 3.",
+            "winning_contributions": {
+              "v5": {
+                "hits": 1,
+                "total": 4
+              },
+              "tc": {
+                "hits": 1,
+                "total": 4
+              }
+            }
+          },
+          {
+            "date": "2026-03-21",
+            "game_type": "V4",
+            "title": "V4 Momarken — 2/4 rätt",
+            "summary": "2 av 4 rätt. Ingen utdelning. Träff i avdelning 2, 4. Miss i avdelning 1, 3.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 2,
+                "total": 4
+              },
+              "tc": {
+                "hits": 1,
+                "total": 4
+              }
+            }
+          },
+          {
+            "date": "2026-03-21",
+            "game_type": "V4",
+            "title": "V4 Wolvega — 4/4 rätt  96 kr",
+            "summary": "4 av 4 rätt. Utdelning 96 kr. Träff i avdelning 1, 2, 3, 4.",
+            "winning_contributions": {
+              "v5": {
+                "hits": 3,
+                "total": 4
+              },
+              "tc": {
+                "hits": 1,
+                "total": 4
+              }
+            }
+          },
+          {
+            "date": "2026-03-21",
+            "game_type": "V4",
+            "title": "V4 Vincennes — 1/4 rätt",
+            "summary": "1 av 4 rätt. Ingen utdelning. Träff i avdelning 4. Miss i avdelning 1, 2, 3.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 1,
+                "total": 4
+              }
+            }
+          },
+          {
+            "date": "2026-03-21",
+            "game_type": "V4",
+            "title": "V4 Åby — 1/4 rätt",
+            "summary": "1 av 4 rätt. Ingen utdelning. Träff i avdelning 4. Miss i avdelning 1, 2, 3.",
+            "winning_contributions": {
+              "v5": {
+                "hits": 1,
+                "total": 4
+              }
+            }
+          },
+          {
+            "date": "2026-03-21",
+            "game_type": "V4",
+            "title": "V4 Odense — 3/4 rätt  1 539 kr",
+            "summary": "3 av 4 rätt. Utdelning 1 539 kr. Träff i avdelning 1, 3, 4. Miss i avdelning 2.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 1,
+                "total": 4
+              },
+              "v5": {
+                "hits": 2,
+                "total": 4
+              },
+              "tc": {
+                "hits": 2,
+                "total": 4
+              }
+            }
+          },
+          {
+            "date": "2026-03-20",
+            "game_type": "V4",
+            "title": "V4 Boden — 2/4 rätt",
+            "summary": "2 av 4 rätt. Ingen utdelning. Träff i avdelning 2, 4. Miss i avdelning 1, 3.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 1,
+                "total": 4
+              },
+              "v5": {
+                "hits": 1,
+                "total": 4
+              },
+              "tc": {
+                "hits": 1,
+                "total": 4
+              }
+            }
+          },
+          {
+            "date": "2026-03-20",
+            "game_type": "V4",
+            "title": "V4 Halmstad — 1/4 rätt",
+            "summary": "1 av 4 rätt. Ingen utdelning. Träff i avdelning 3. Miss i avdelning 1, 2, 4.",
+            "winning_contributions": {
+              "tc": {
+                "hits": 1,
+                "total": 4
+              }
+            }
+          }
+        ]
+      },
+      "v3": {
+        "summary": {
+          "settled_games": 12,
+          "wins": 3,
+          "near_misses": 3,
+          "perfect_hits": 3,
+          "total_cost_sek": 4330,
+          "total_payout_sek": 4321,
+          "roi_pct": -0.2
+        },
+        "rolling": {
+          "window_days": [
+            7,
+            30
+          ],
+          "series": [
+            {
+              "date": "2026-03-17",
+              "win_rate_7d": 100.0,
+              "roi_7d": 203.2,
+              "win_rate_30d": 100.0,
+              "roi_30d": 203.2
+            },
+            {
+              "date": "2026-03-18",
+              "win_rate_7d": 60.0,
+              "roi_7d": 68.8,
+              "win_rate_30d": 60.0,
+              "roi_30d": 68.8
+            },
+            {
+              "date": "2026-03-19",
+              "win_rate_7d": 42.9,
+              "roi_7d": 43.6,
+              "win_rate_30d": 42.9,
+              "roi_30d": 43.6
+            },
+            {
+              "date": "2026-03-20",
+              "win_rate_7d": 30.0,
+              "roi_7d": 8.8,
+              "win_rate_30d": 30.0,
+              "roi_30d": 8.8
+            },
+            {
+              "date": "2026-03-21",
+              "win_rate_7d": 27.3,
+              "roi_7d": 4.1,
+              "win_rate_30d": 27.3,
+              "roi_30d": 4.1
+            },
+            {
+              "date": "2026-03-22",
+              "win_rate_7d": 25.0,
+              "roi_7d": -0.2,
+              "win_rate_30d": 25.0,
+              "roi_30d": -0.2
+            }
+          ]
+        },
+        "recent_results": [
+          {
+            "date": "2026-03-22",
+            "mode": "union",
+            "game_id": "V3_2026-03-22_12_7",
+            "game_type": "V3",
+            "track": "Bollnäs",
+            "hits": 1,
+            "total_legs": 3,
+            "leg_results": [
+              "✗",
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "1 rätt",
+            "cost_sek": 180
+          },
+          {
+            "date": "2026-03-21",
+            "mode": "union",
+            "game_id": "V3_2026-03-21_6_10",
+            "game_type": "V3",
+            "track": "Åby",
+            "hits": 1,
+            "total_legs": 3,
+            "leg_results": [
+              "✗",
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "1 rätt",
+            "cost_sek": 180
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "V3_2026-03-20_18_8",
+            "game_type": "V3",
+            "track": "Halmstad",
+            "hits": 1,
+            "total_legs": 3,
+            "leg_results": [
+              "✗",
+              "✗",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "1 rätt",
+            "cost_sek": 240
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "V3_2026-03-20_11_7",
+            "game_type": "V3",
+            "track": "Boden",
+            "hits": 1,
+            "total_legs": 3,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "1 rätt",
+            "cost_sek": 360
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "V3_2026-03-20_23_6",
+            "game_type": "V3",
+            "track": "Romme",
+            "hits": 1,
+            "total_legs": 3,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "1 rätt",
+            "cost_sek": 360
+          },
+          {
+            "date": "2026-03-19",
+            "mode": "union",
+            "game_id": "V3_2026-03-19_16_8",
+            "game_type": "V3",
+            "track": "Gävle",
+            "hits": 2,
+            "total_legs": 3,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "2 rätt",
+            "cost_sek": 180
+          },
+          {
+            "date": "2026-03-19",
+            "mode": "union",
+            "game_id": "V3_2026-03-19_33_6",
+            "game_type": "V3",
+            "track": "Östersund",
+            "hits": 2,
+            "total_legs": 3,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✓"
+            ],
+            "payout_sek": null,
+            "status": "2 rätt",
+            "cost_sek": 270
+          },
+          {
+            "date": "2026-03-18",
+            "mode": "union",
+            "game_id": "V3_2026-03-18_5_7",
+            "game_type": "V3",
+            "track": "Solvalla",
+            "hits": 3,
+            "total_legs": 3,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✓"
+            ],
+            "payout_sek": 198,
+            "status": "3 rätt — utdelning",
+            "cost_sek": 360
+          },
+          {
+            "date": "2026-03-18",
+            "mode": "union",
+            "game_id": "V3_2026-03-18_9_7",
+            "game_type": "V3",
+            "track": "Bergsåker",
+            "hits": 2,
+            "total_legs": 3,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "2 rätt",
+            "cost_sek": 360
+          },
+          {
+            "date": "2026-03-18",
+            "mode": "union",
+            "game_id": "V3_2026-03-18_7_5",
+            "game_type": "V3",
+            "track": "Jägersro",
+            "hits": 1,
+            "total_legs": 3,
+            "leg_results": [
+              "✓",
+              "✗",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "1 rätt",
+            "cost_sek": 480
+          },
+          {
+            "date": "2026-03-17",
+            "mode": "union",
+            "game_id": "V3_2026-03-17_15_8",
+            "game_type": "V3",
+            "track": "Färjestad",
+            "hits": 3,
+            "total_legs": 3,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✓"
+            ],
+            "payout_sek": 515,
+            "status": "3 rätt — utdelning",
+            "cost_sek": 360
+          },
+          {
+            "date": "2026-03-17",
+            "mode": "union",
+            "game_id": "V3_2026-03-17_14_6",
+            "game_type": "V3",
+            "track": "Eskilstuna",
+            "hits": 3,
+            "total_legs": 3,
+            "leg_results": [
+              "✓",
+              "✓",
+              "✓"
+            ],
+            "payout_sek": 3608,
+            "status": "3 rätt — utdelning",
+            "cost_sek": 1000
+          }
+        ],
+        "recent_wraps": [
+          {
+            "date": "2026-03-22",
+            "game_type": "V3",
+            "title": "V3 Bollnäs — 1/3 rätt",
+            "summary": "1 av 3 rätt. Ingen utdelning. Träff i avdelning 2. Miss i avdelning 1, 3.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 1,
+                "total": 3
+              },
+              "tc": {
+                "hits": 1,
+                "total": 3
+              }
+            }
+          },
+          {
+            "date": "2026-03-21",
+            "game_type": "V3",
+            "title": "V3 Åby — 1/3 rätt",
+            "summary": "1 av 3 rätt. Ingen utdelning. Träff i avdelning 2. Miss i avdelning 1, 3.",
+            "winning_contributions": {
+              "v5": {
+                "hits": 1,
+                "total": 3
+              }
+            }
+          },
+          {
+            "date": "2026-03-20",
+            "game_type": "V3",
+            "title": "V3 Halmstad — 1/3 rätt",
+            "summary": "1 av 3 rätt. Ingen utdelning. Träff i avdelning 3. Miss i avdelning 1, 2.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 1,
+                "total": 3
+              }
+            }
+          },
+          {
+            "date": "2026-03-20",
+            "game_type": "V3",
+            "title": "V3 Boden — 1/3 rätt",
+            "summary": "1 av 3 rätt. Ingen utdelning. Träff i avdelning 1. Miss i avdelning 2, 3.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 1,
+                "total": 3
+              },
+              "tc": {
+                "hits": 1,
+                "total": 3
+              }
+            }
+          },
+          {
+            "date": "2026-03-20",
+            "game_type": "V3",
+            "title": "V3 Romme — 1/3 rätt",
+            "summary": "1 av 3 rätt. Ingen utdelning. Träff i avdelning 1. Miss i avdelning 2, 3.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 1,
+                "total": 3
+              },
+              "tc": {
+                "hits": 1,
+                "total": 3
+              }
+            }
+          },
+          {
+            "date": "2026-03-19",
+            "game_type": "V3",
+            "title": "V3 Gävle — 2/3 rätt",
+            "summary": "2 av 3 rätt. Ingen utdelning. Träff i avdelning 1, 2. Miss i avdelning 3.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 2,
+                "total": 3
+              }
+            }
+          },
+          {
+            "date": "2026-03-19",
+            "game_type": "V3",
+            "title": "V3 Östersund — 2/3 rätt",
+            "summary": "2 av 3 rätt. Ingen utdelning. Träff i avdelning 1, 3. Miss i avdelning 2.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 1,
+                "total": 3
+              },
+              "tc": {
+                "hits": 1,
+                "total": 3
+              }
+            }
+          },
+          {
+            "date": "2026-03-18",
+            "game_type": "V3",
+            "title": "V3 Solvalla — 3/3 rätt  198 kr",
+            "summary": "3 av 3 rätt. Utdelning 198 kr. Träff i avdelning 1, 2, 3.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 2,
+                "total": 3
+              },
+              "v5": {
+                "hits": 2,
+                "total": 3
+              }
+            }
+          }
+        ]
+      },
+      "dd": {
+        "summary": {
+          "settled_games": 5,
+          "wins": 2,
+          "near_misses": 2,
+          "perfect_hits": 2,
+          "total_cost_sek": 450,
+          "total_payout_sek": 453,
+          "roi_pct": 0.7
+        },
+        "rolling": {
+          "window_days": [
+            7,
+            30
+          ],
+          "series": [
+            {
+              "date": "2026-03-17",
+              "win_rate_7d": 100.0,
+              "roi_7d": 501.7,
+              "win_rate_30d": 100.0,
+              "roi_30d": 501.7
+            },
+            {
+              "date": "2026-03-18",
+              "win_rate_7d": 50.0,
+              "roi_7d": 157.9,
+              "win_rate_30d": 50.0,
+              "roi_30d": 157.9
+            },
+            {
+              "date": "2026-03-19",
+              "win_rate_7d": 66.7,
+              "roi_7d": 126.5,
+              "win_rate_30d": 66.7,
+              "roi_30d": 126.5
+            },
+            {
+              "date": "2026-03-20",
+              "win_rate_7d": 50.0,
+              "roi_7d": 25.8,
+              "win_rate_30d": 50.0,
+              "roi_30d": 25.8
+            },
+            {
+              "date": "2026-03-21",
+              "win_rate_7d": 40.0,
+              "roi_7d": 0.7,
+              "win_rate_30d": 40.0,
+              "roi_30d": 0.7
+            }
+          ]
+        },
+        "recent_results": [
+          {
+            "date": "2026-03-21",
+            "mode": "union",
+            "game_id": "dd_2026-03-21_6_11",
+            "game_type": "DD",
+            "track": "Åby",
+            "hits": 0,
+            "total_legs": 2,
+            "leg_results": [
+              "✗",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "0 rätt",
+            "cost_sek": 90
+          },
+          {
+            "date": "2026-03-20",
+            "mode": "union",
+            "game_id": "dd_2026-03-20_18_8",
+            "game_type": "DD",
+            "track": "Halmstad",
+            "hits": 1,
+            "total_legs": 2,
+            "leg_results": [
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "1 rätt",
+            "cost_sek": 160
+          },
+          {
+            "date": "2026-03-19",
+            "mode": "union",
+            "game_id": "dd_2026-03-19_16_8",
+            "game_type": "DD",
+            "track": "Gävle",
+            "hits": 2,
+            "total_legs": 2,
+            "leg_results": [
+              "✓",
+              "✓"
+            ],
+            "payout_sek": 92,
+            "status": "2 rätt — utdelning",
+            "cost_sek": 60
+          },
+          {
+            "date": "2026-03-18",
+            "mode": "union",
+            "game_id": "dd_2026-03-18_40_7",
+            "game_type": "DD",
+            "track": "Bergsåker",
+            "hits": 1,
+            "total_legs": 2,
+            "leg_results": [
+              "✓",
+              "✗"
+            ],
+            "payout_sek": null,
+            "status": "1 rätt",
+            "cost_sek": 80
+          },
+          {
+            "date": "2026-03-17",
+            "mode": "union",
+            "game_id": "dd_2026-03-17_15_8",
+            "game_type": "DD",
+            "track": "Färjestad",
+            "hits": 2,
+            "total_legs": 2,
+            "leg_results": [
+              "✓",
+              "✓"
+            ],
+            "payout_sek": 361,
+            "status": "2 rätt — utdelning",
+            "cost_sek": 60
+          }
+        ],
+        "recent_wraps": [
+          {
+            "date": "2026-03-21",
+            "game_type": "DD",
+            "title": "DD Åby — 0/2 rätt",
+            "summary": "0 av 2 rätt. Ingen utdelning. Miss i avdelning 1, 2."
+          },
+          {
+            "date": "2026-03-20",
+            "game_type": "DD",
+            "title": "DD Halmstad — 1/2 rätt",
+            "summary": "1 av 2 rätt. Ingen utdelning. Träff i avdelning 1. Miss i avdelning 2."
+          },
+          {
+            "date": "2026-03-19",
+            "game_type": "DD",
+            "title": "DD Gävle — 2/2 rätt  92 kr",
+            "summary": "2 av 2 rätt. Utdelning 92 kr. Träff i avdelning 1, 2.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 2,
+                "total": 2
+              }
+            }
+          },
+          {
+            "date": "2026-03-18",
+            "game_type": "DD",
+            "title": "DD Bergsåker — 1/2 rätt",
+            "summary": "1 av 2 rätt. Ingen utdelning. Träff i avdelning 1. Miss i avdelning 2.",
+            "winning_contributions": {
+              "tc": {
+                "hits": 1,
+                "total": 2
+              }
+            }
+          },
+          {
+            "date": "2026-03-17",
+            "game_type": "DD",
+            "title": "DD Färjestad — 2/2 rätt  361 kr",
+            "summary": "2 av 2 rätt. Utdelning 361 kr. Träff i avdelning 1, 2.",
+            "winning_contributions": {
+              "formlines": {
+                "hits": 1,
+                "total": 2
+              },
+              "v5": {
+                "hits": 1,
+                "total": 2
+              }
+            }
+          }
+        ]
+      }
+    },
     "summary": {
       "settled_games": 58,
       "wins": 13,
@@ -927,7 +3740,7 @@
         "date": "2026-03-21",
         "mode": "union",
         "game_id": "dd_2026-03-21_6_11",
-        "game_type": "dd",
+        "game_type": "DD",
         "track": "Åby",
         "hits": 0,
         "total_legs": 2,
@@ -1106,7 +3919,7 @@
         "date": "2026-03-20",
         "mode": "union",
         "game_id": "dd_2026-03-20_18_8",
-        "game_type": "dd",
+        "game_type": "DD",
         "track": "Halmstad",
         "hits": 1,
         "total_legs": 2,
@@ -1307,6 +4120,7 @@
     "recent_wraps": [
       {
         "date": "2026-03-22",
+        "game_type": "V3",
         "title": "V3 Bollnäs — 1/3 rätt",
         "summary": "1 av 3 rätt. Ingen utdelning. Träff i avdelning 2. Miss i avdelning 1, 3.",
         "winning_contributions": {
@@ -1322,6 +4136,7 @@
       },
       {
         "date": "2026-03-22",
+        "game_type": "V5",
         "title": "V5 Bollnäs — 2/5 rätt",
         "summary": "2 av 5 rätt. Ingen utdelning. Träff i avdelning 1, 4. Miss i avdelning 2, 3, 5.",
         "winning_contributions": {
@@ -1341,6 +4156,7 @@
       },
       {
         "date": "2026-03-22",
+        "game_type": "V4",
         "title": "V4 Bollnäs — 2/4 rätt",
         "summary": "2 av 4 rätt. Ingen utdelning. Träff i avdelning 1, 4. Miss i avdelning 2, 3.",
         "winning_contributions": {
@@ -1356,6 +4172,7 @@
       },
       {
         "date": "2026-03-21",
+        "game_type": "V65",
         "title": "V65 Momarken — 3/6 rätt",
         "summary": "3 av 6 rätt. Ingen utdelning. Träff i avdelning 1, 4, 6. Miss i avdelning 2, 3, 5.",
         "winning_contributions": {
@@ -1375,6 +4192,7 @@
       },
       {
         "date": "2026-03-21",
+        "game_type": "V4",
         "title": "V4 Momarken — 2/4 rätt",
         "summary": "2 av 4 rätt. Ingen utdelning. Träff i avdelning 2, 4. Miss i avdelning 1, 3.",
         "winning_contributions": {
@@ -1390,6 +4208,7 @@
       },
       {
         "date": "2026-03-21",
+        "game_type": "V4",
         "title": "V4 Wolvega — 4/4 rätt  96 kr",
         "summary": "4 av 4 rätt. Utdelning 96 kr. Träff i avdelning 1, 2, 3, 4.",
         "winning_contributions": {
@@ -1405,6 +4224,7 @@
       },
       {
         "date": "2026-03-21",
+        "game_type": "V85",
         "title": "V85 Åby — 3/8 rätt",
         "summary": "3 av 8 rätt. Ingen utdelning. Träff i avdelning 3, 6, 7. Miss i avdelning 1, 2, 4, 5, 8.",
         "winning_contributions": {
@@ -1420,6 +4240,7 @@
       },
       {
         "date": "2026-03-21",
+        "game_type": "V3",
         "title": "V3 Åby — 1/3 rätt",
         "summary": "1 av 3 rätt. Ingen utdelning. Träff i avdelning 2. Miss i avdelning 1, 3.",
         "winning_contributions": {

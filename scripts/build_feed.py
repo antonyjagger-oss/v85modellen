@@ -13,6 +13,12 @@ sys.path.insert(0, "/home/dodge/v75")
 from coupon_evaluator import evaluate_game_coupon
 
 
+def normalize_game_type(raw_game_type: Optional[str]) -> str:
+    if not raw_game_type:
+        return "?"
+    return str(raw_game_type).upper()
+
+
 def parse_args():
     parser = argparse.ArgumentParser(description="Build public V85Modellen feed from SQLite DB.")
     parser.add_argument(
@@ -243,7 +249,7 @@ def build_recent_result(cur: sqlite3.Cursor, row: sqlite3.Row, db_path: str) -> 
         "date": date_str,
         "mode": "union",
         "game_id": row["meet_id"],
-        "game_type": row["game_type"],
+        "game_type": normalize_game_type(row["game_type"]),
         "track": fetch_track_for_game(cur, row["meet_id"]),
         "hits": hits,
         "total_legs": total_legs,
@@ -296,6 +302,7 @@ def build_wrap(cur: sqlite3.Cursor, row: sqlite3.Row, db_path: str) -> Optional[
 
     wrap = {
         "date": result["date"],
+        "game_type": result["game_type"],
         "title": title,
         "summary": " ".join(summary_bits),
     }
@@ -327,7 +334,7 @@ def build_coupon(cur: sqlite3.Cursor, row: sqlite3.Row) -> Optional[dict]:
 
     return {
         "game_id": row["meet_id"],
-        "game_type": row["game_type"] or row["meet_id"].split("_", 1)[0].upper(),
+        "game_type": normalize_game_type(row["game_type"] or row["meet_id"].split("_", 1)[0].upper()),
         "track": fetch_track_for_game(cur, row["meet_id"]),
         "mode": "union",
         "rows": int(row["total_rows"] or 0),
@@ -336,11 +343,9 @@ def build_coupon(cur: sqlite3.Cursor, row: sqlite3.Row) -> Optional[dict]:
     }
 
 
-def build_performance(recent_results: List[dict], wraps: List[dict], completed_rows: List[sqlite3.Row]) -> dict:
-    if not recent_results:
+def build_performance_segment(results: List[dict], wraps: List[dict]) -> dict:
+    if not results:
         return {
-            "updated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
-            "union_started_on": None,
             "summary": {
                 "settled_games": 0,
                 "wins": 0,
@@ -356,7 +361,7 @@ def build_performance(recent_results: List[dict], wraps: List[dict], completed_r
         }
 
     results_by_date: Dict[str, List[dict]] = defaultdict(list)
-    for item in recent_results:
+    for item in results:
         results_by_date[item["date"]].append(item)
 
     ordered_dates = sorted(results_by_date.keys())
@@ -402,24 +407,36 @@ def build_performance(recent_results: List[dict], wraps: List[dict], completed_r
             row[f"roi_{window}d"] = round(((total_payout - total_cost) / total_cost) * 100, 1) if total_cost else 0.0
         rolling_series.append(row)
 
-    total_cost = sum(item.get("cost_sek", 0) or 0 for item in recent_results)
-    total_payout = sum(item.get("payout_sek", 0) or 0 for item in recent_results)
+    total_cost = sum(item.get("cost_sek", 0) or 0 for item in results)
+    total_payout = sum(item.get("payout_sek", 0) or 0 for item in results)
     summary = {
-        "settled_games": len(recent_results),
-        "wins": sum(1 for item in recent_results if item.get("payout_sek")),
+        "settled_games": len(results),
+        "wins": sum(1 for item in results if item.get("payout_sek")),
         "near_misses": sum(
             1
-            for item in recent_results
+            for item in results
             if item.get("hits", 0) == max(0, item.get("total_legs", 0) - 1)
         ),
         "perfect_hits": sum(
-            1 for item in recent_results if item.get("hits", 0) == item.get("total_legs", 0)
+            1 for item in results if item.get("hits", 0) == item.get("total_legs", 0)
         ),
         "total_cost_sek": total_cost,
         "total_payout_sek": total_payout,
         "roi_pct": round(((total_payout - total_cost) / total_cost) * 100, 1) if total_cost else 0.0,
     }
 
+    return {
+        "summary": summary,
+        "rolling": {
+            "window_days": [7, 30],
+            "series": rolling_series,
+        },
+        "recent_results": results[:30],
+        "recent_wraps": wraps[:8],
+    }
+
+
+def build_performance(results: List[dict], wraps: List[dict], completed_rows: List[sqlite3.Row]) -> dict:
     union_started_on = None
     if completed_rows:
         raw_dates = []
@@ -430,16 +447,31 @@ def build_performance(recent_results: List[dict], wraps: List[dict], completed_r
         if raw_dates:
             union_started_on = min(raw_dates)
 
+    all_segment = build_performance_segment(results, wraps)
+
+    segment_order = ["V85", "V86", "V75", "GS75", "V65", "V64", "V5", "V4", "V3", "DD"]
+    available_types = sorted({item["game_type"] for item in results}, key=lambda gt: (segment_order.index(gt) if gt in segment_order else len(segment_order), gt))
+
+    segments = {"all": all_segment}
+    filters = [{"key": "all", "label": "Alla", "count": all_segment["summary"]["settled_games"]}]
+
+    for game_type in available_types:
+        type_results = [item for item in results if item["game_type"] == game_type]
+        type_wraps = [wrap for wrap in wraps if wrap.get("game_type") == game_type]
+        key = game_type.lower()
+        segments[key] = build_performance_segment(type_results, type_wraps)
+        filters.append({"key": key, "label": game_type, "count": len(type_results)})
+
     return {
         "updated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "union_started_on": union_started_on,
-        "summary": summary,
-        "rolling": {
-            "window_days": [7, 30],
-            "series": rolling_series,
-        },
-        "recent_results": recent_results[:30],
-        "recent_wraps": wraps[:8],
+        "default_filter": "all",
+        "filters": filters,
+        "segments": segments,
+        "summary": all_segment["summary"],
+        "rolling": all_segment["rolling"],
+        "recent_results": all_segment["recent_results"],
+        "recent_wraps": all_segment["recent_wraps"],
     }
 
 

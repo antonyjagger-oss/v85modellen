@@ -217,6 +217,82 @@
             padding: 0.45rem 0.85rem;
         }
 
+        .filter-section {
+            padding-top: 0.25rem;
+            padding-bottom: 0.6rem;
+        }
+
+        .filter-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 0.95rem 1rem;
+        }
+
+        .filter-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .filter-title {
+            font-size: 0.92rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .filter-copy {
+            color: var(--text-secondary);
+            font-size: 0.84rem;
+        }
+
+        .filter-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+        }
+
+        .filter-chip {
+            appearance: none;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            border-radius: 999px;
+            padding: 0.5rem 0.8rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s, border-color 0.2s, color 0.2s;
+        }
+
+        .filter-chip:hover {
+            border-color: var(--border-light);
+            color: var(--text);
+        }
+
+        .filter-chip.active {
+            background: rgba(29, 155, 240, 0.14);
+            border-color: rgba(29, 155, 240, 0.34);
+            color: #fff;
+        }
+
+        .filter-chip-count {
+            color: var(--text-muted);
+            margin-left: 0.3rem;
+        }
+
+        .filter-chip.active .filter-chip-count {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .filter-note {
+            margin-top: 0.8rem;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+        }
+
         section { padding: 1.25rem 0 2.1rem; }
 
         .section-header { margin-bottom: 1rem; }
@@ -274,6 +350,8 @@
             line-height: 1;
             margin-bottom: 0.35rem;
         }
+
+        .summary-value.neutral { color: var(--text); }
 
         .summary-sub {
             color: var(--text-muted);
@@ -602,6 +680,7 @@
             .container { padding: 0 1rem; }
             .summary-grid { grid-template-columns: 1fr; }
             .hero { padding-top: 6.8rem; }
+            .filter-top { flex-direction: column; align-items: flex-start; }
             .chart-meta { flex-direction: column; }
             .signal-bar { grid-template-columns: 1fr; gap: 0.3rem; }
             .cta-button { width: 100%; }
@@ -640,6 +719,19 @@
                 Sajten visar vad som hände. Alpha är för dig som vill ha kupongerna före spelstopp.
             </p>
             <div class="hero-note" id="hero-note">Laddar aktuell status…</div>
+        </section>
+
+        <section class="filter-section">
+            <div class="filter-card">
+                <div class="filter-top">
+                    <div class="filter-title">Bryt ned efter speltyp</div>
+                    <div class="filter-copy">Välj om du vill se hela <span class="union-mark"><span class="union-word">Unio</span><span class="union-tail">n</span><span class="union-tm">TM</span></span> eller bara en viss speltyp.</div>
+                </div>
+                <div class="filter-row" id="filter-row">
+                    <div class="loading-message">Laddar filter…</div>
+                </div>
+                <div class="filter-note" id="filter-note"></div>
+            </div>
         </section>
 
         <section>
@@ -723,6 +815,7 @@
         'use strict';
 
         const FEED_URL = '/api/feed';
+        let activeFilterKey = 'all';
 
         function escapeHtml(str) {
             const div = document.createElement('div');
@@ -748,15 +841,50 @@
             return Number(amount).toLocaleString('sv-SE') + ' kr';
         }
 
-        function renderSummary(perf) {
-            if (!perf || !perf.summary) {
+        function formatFilterLabel(key, perf) {
+            if (!perf || !perf.filters) return 'Alla';
+            const match = perf.filters.find(function(filter) { return filter.key === key; });
+            return match ? match.label : 'Alla';
+        }
+
+        function buildFilterNote(segment, label) {
+            if (!segment || !segment.summary) return '';
+            const settled = segment.summary.settled_games || 0;
+            if (label === 'Alla') {
+                return 'Visar hela Union-historiken uppdelad på samma sätt som sajten följer upp resultaten i dag.';
+            }
+            if (settled <= 1) {
+                return label + ' har bara ' + settled + ' avgjort spel hittills. Läs siffrorna som tidiga signaler, inte som ett färdigt facit.';
+            }
+            if (settled <= 3) {
+                return label + ' har fortfarande litet underlag. Det gör splitten användbar, men inte färdigbedömd ännu.';
+            }
+            return 'Visar bara ' + label + '-spel. Det gör det lättare att se var Union faktiskt varit stark eller svag.';
+        }
+
+        function renderFilters(perf, activeKey) {
+            if (!perf || !perf.filters || perf.filters.length === 0) {
+                return '<div class="loading-message">Inga filter ännu</div>';
+            }
+
+            return perf.filters.map(function(filter) {
+                const activeClass = filter.key === activeKey ? ' active' : '';
+                return '<button class="filter-chip' + activeClass + '" type="button" data-filter-key="' + escapeHtml(filter.key) + '">' +
+                    escapeHtml(filter.label) +
+                    '<span class="filter-chip-count">' + escapeHtml(String(filter.count || 0)) + '</span>' +
+                    '</button>';
+            }).join('');
+        }
+
+        function renderSummary(segment, startedOn, label) {
+            if (!segment || !segment.summary) {
                 return '<div class="loading-message">Ingen prestandadata ännu</div>';
             }
 
-            const s = perf.summary;
-            const roiClass = s.roi_pct > 0 ? 'payout-positive' : (s.roi_pct < 0 ? 'payout-negative' : '');
+            const s = segment.summary;
+            const roiClass = s.roi_pct > 0 ? 'payout-positive' : (s.roi_pct < 0 ? 'payout-negative' : 'neutral');
             return [
-                ['Avgjorda spel', s.settled_games || 0, perf.union_started_on ? 'sedan ' + formatDate(perf.union_started_on) : 'Union-historik'],
+                ['Avgjorda spel', s.settled_games || 0, startedOn ? (label === 'Alla' ? 'sedan ' + formatDate(startedOn) : label + ' sedan ' + formatDate(startedOn)) : 'Union-historik'],
                 ['Vinster', s.wins || 0, 'spel med utdelning'],
                 ['Near misses', s.near_misses || 0, 'en rätt ifrån'],
                 ['ROI', (s.roi_pct || 0).toLocaleString('sv-SE', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + '%', formatSEK(s.total_payout_sek || 0) + ' på ' + formatSEK(s.total_cost_sek || 0), roiClass]
@@ -829,9 +957,9 @@
                 '</svg>';
         }
 
-        function renderResults(results) {
+        function renderResults(results, label) {
             if (!results || results.length === 0) {
-                return '<div class="loading-message">Inga avgjorda spel ännu</div>';
+                return '<div class="loading-message">Inga avgjorda ' + escapeHtml(label === 'Alla' ? 'spel' : (label + '-spel')) + ' ännu</div>';
             }
 
             let html = '<table class="results-table"><thead><tr>';
@@ -864,9 +992,9 @@
             return html;
         }
 
-        function renderWraps(wraps) {
+        function renderWraps(wraps, label) {
             if (!wraps || wraps.length === 0) {
-                return '<div class="loading-message">Inga wrappar ännu</div>';
+                return '<div class="loading-message">Inga wrappar för ' + escapeHtml(label === 'Alla' ? 'Union ännu' : label + ' ännu') + '</div>';
             }
 
             return wraps.map(function(w) {
@@ -904,6 +1032,44 @@
             }).join('');
         }
 
+        function getActiveSegment(perf, key) {
+            if (!perf || !perf.segments) return null;
+            return perf.segments[key] || perf.segments[perf.default_filter || 'all'] || null;
+        }
+
+        function updatePerformanceView(perf, key) {
+            const label = formatFilterLabel(key, perf);
+            const scopeLabel = label === 'Alla' ? 'alla spel' : label;
+            const segment = getActiveSegment(perf, key);
+            if (!segment) {
+                document.getElementById('summary-grid').innerHTML = '<div class="loading-message">Kunde inte ladda segmentdata</div>';
+                return;
+            }
+
+            document.getElementById('summary-grid').innerHTML = renderSummary(segment, perf.union_started_on, label);
+            document.getElementById('results-container').innerHTML = renderResults(segment.recent_results || [], label);
+            document.getElementById('wraps-container').innerHTML = renderWraps(segment.recent_wraps || [], label);
+            document.getElementById('chart-shell').innerHTML = buildChartSvg((segment.rolling || {}).series || []);
+            document.getElementById('filter-row').innerHTML = renderFilters(perf, key);
+            document.getElementById('filter-note').textContent = buildFilterNote(segment, label);
+
+            const started = perf.union_started_on ? 'Union startade ' + formatDate(perf.union_started_on) : 'Union-historik';
+            document.getElementById('hero-note').textContent =
+                started + ' • visar ' + scopeLabel + ' • uppdaterad ' + formatTimestamp(perf.updated_at);
+
+            document.getElementById('chart-subtitle').textContent =
+                (label === 'Alla' ? '7 dagar jämfört med 30 dagar eller tillgänglig historik.' : scopeLabel + ': 7 dagar jämfört med 30 dagar eller tillgänglig historik.');
+
+            document.querySelectorAll('[data-filter-key]').forEach(function(button) {
+                button.addEventListener('click', function() {
+                    const nextKey = button.getAttribute('data-filter-key') || 'all';
+                    if (nextKey === activeFilterKey) return;
+                    activeFilterKey = nextKey;
+                    updatePerformanceView(perf, activeFilterKey);
+                });
+            });
+        }
+
         async function loadFeed() {
             try {
                 const res = await fetch(FEED_URL);
@@ -912,20 +1078,16 @@
                 const perf = feed.performance;
                 if (!perf) throw new Error('Performance data missing');
 
-                document.getElementById('summary-grid').innerHTML = renderSummary(perf);
-                document.getElementById('results-container').innerHTML = renderResults(perf.recent_results || []);
-                document.getElementById('wraps-container').innerHTML = renderWraps(perf.recent_wraps || []);
-                document.getElementById('chart-shell').innerHTML = buildChartSvg((perf.rolling || {}).series || []);
-
-                const started = perf.union_started_on ? 'Union startade ' + formatDate(perf.union_started_on) : 'Union-historik';
-                document.getElementById('hero-note').textContent =
-                    started + ' • uppdaterad ' + formatTimestamp(perf.updated_at);
+                activeFilterKey = perf.default_filter || 'all';
+                updatePerformanceView(perf, activeFilterKey);
             } catch (err) {
                 console.error('Failed to load feed:', err);
                 document.getElementById('summary-grid').innerHTML = '<div class="loading-message">Kunde inte ladda prestandadata</div>';
                 document.getElementById('results-container').innerHTML = '<div class="loading-message">Kunde inte ladda avgjorda spel</div>';
                 document.getElementById('wraps-container').innerHTML = '<div class="loading-message">Kunde inte ladda wrappar</div>';
                 document.getElementById('chart-shell').innerHTML = '<div class="chart-empty">Kunde inte ladda rullande historik</div>';
+                document.getElementById('filter-row').innerHTML = '<div class="loading-message">Kunde inte ladda filter</div>';
+                document.getElementById('filter-note').textContent = '';
                 document.getElementById('hero-note').textContent = 'Kunde inte ladda aktuell status';
             }
         }
