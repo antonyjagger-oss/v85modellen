@@ -734,7 +734,71 @@
 
         @media (max-width: 820px) {
             .nav-links a:not(.nav-cta) { display: none; }
+            .nav-hamburger { display: flex; }
         }
+
+        /* ── HAMBURGER ── */
+        .nav-hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.25rem;
+            color: var(--text-muted);
+            flex-direction: column;
+            gap: 5px;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: currentColor;
+            border-radius: 2px;
+            transition: all 0.2s ease;
+        }
+        .nav-hamburger:hover { color: var(--text); }
+        .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+        .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        .nav-mobile-menu {
+            display: none;
+            position: fixed;
+            top: 56px;
+            left: 0;
+            right: 0;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 1.25rem 1.5rem;
+            z-index: 99;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        .nav-mobile-menu.open { display: flex; }
+        .nav-mobile-menu a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid var(--border);
+            transition: color 0.15s;
+        }
+        .nav-mobile-menu a:last-child { border-bottom: none; }
+        .nav-mobile-menu a:hover { color: var(--text); }
+        .nav-mobile-menu .nav-cta-mobile {
+            margin-top: 0.75rem;
+            display: inline-block;
+            background: var(--accent);
+            color: #fff !important;
+            padding: 0.65rem 1.25rem;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 600;
+            border-bottom: none !important;
+        }
+        .nav-mobile-menu .nav-cta-mobile:hover { background: var(--accent-hover) !important; }
 
         @media (max-width: 640px) {
             nav { padding: 0 1rem; }
@@ -769,7 +833,17 @@
             <a href="/prestanda" class="active">Prestanda</a>
             <a href="https://www.patreon.com/c/V85Modellen" target="_blank" rel="noopener" class="nav-cta">Bli medlem →</a>
         </div>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Öppna meny" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
+
+    <!-- MOBILE NAV MENU -->
+    <div class="nav-mobile-menu" id="navMobileMenu">
+        <a href="/">Start</a>
+        <a href="/prestanda">Prestanda</a>
+        <a href="https://www.patreon.com/c/V85Modellen" target="_blank" rel="noopener" class="nav-cta-mobile">Bli medlem →</a>
+    </div>
 
     <div class="container">
         <section class="hero">
@@ -1238,5 +1312,32 @@
         document.addEventListener('DOMContentLoaded', loadFeed);
     })();
     </script>
+
+<script>
+(function() {
+    var btn = document.getElementById('navHamburger');
+    var menu = document.getElementById('navMobileMenu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function() {
+        var open = menu.classList.toggle('open');
+        btn.classList.toggle('open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+            menu.classList.remove('open');
+            btn.classList.remove('open');
+            btn.setAttribute('aria-expanded', 'false');
+        });
+    });
+    document.addEventListener('click', function(e) {
+        if (!btn.contains(e.target) && !menu.contains(e.target)) {
+            menu.classList.remove('open');
+            btn.classList.remove('open');
+            btn.setAttribute('aria-expanded', 'false');
+        }
+    });
+})();
+</script>
 </body>
 </html>
