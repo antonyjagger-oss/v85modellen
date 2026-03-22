@@ -103,6 +103,33 @@
             text-transform: uppercase;
         }
 
+        .union-mark {
+            display: inline-flex;
+            align-items: flex-start;
+            gap: 0.08em;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--text);
+            white-space: nowrap;
+        }
+
+        .union-mark .union-word {
+            letter-spacing: -0.04em;
+        }
+
+        .union-mark .union-tail {
+            color: var(--accent);
+            letter-spacing: -0.02em;
+        }
+
+        .union-mark .union-tm {
+            font-size: 0.36em;
+            line-height: 1;
+            color: var(--text-muted);
+            margin-left: 0.08em;
+            transform: translateY(-0.02em);
+        }
+
         .nav-links { display: flex; align-items: center; gap: 1.25rem; }
 
         .nav-links a {
@@ -607,9 +634,9 @@
     <div class="container">
         <section class="hero">
             <div class="hero-label">Offentlig uppföljning</div>
-            <h1>Öppen <span class="accent">prestanda</span><br>för Union</h1>
+            <h1>Öppen <span class="accent">prestanda</span><br>för <span class="union-mark"><span class="union-word">Unio</span><span class="union-tail">n</span><span class="union-tm">TM</span></span></h1>
             <p class="hero-copy">
-                Här syns avgjorda Union-spel, rullande utveckling och senaste utfall utan att svaga perioder göms undan.
+                Här syns avgjorda <span class="union-mark"><span class="union-word">Unio</span><span class="union-tail">n</span><span class="union-tm">TM</span></span>-spel, rullande utveckling och senaste utfall utan att svaga perioder göms undan.
                 Sajten visar vad som hände. Patreon är där kupongerna kommer före spelstopp.
             </p>
             <div class="hero-note" id="hero-note">Laddar aktuell status…</div>
@@ -618,7 +645,7 @@
         <section>
             <div class="section-header">
                 <div class="section-label">Sedan start</div>
-                <div class="section-title">Union i klara siffror</div>
+                <div class="section-title"><span class="union-mark"><span class="union-word">Unio</span><span class="union-tail">n</span><span class="union-tm">TM</span></span> i klara siffror</div>
                 <div class="section-subtitle">Endast mått som redan går att definiera och följa upp i nuvarande datalager.</div>
             </div>
             <div class="summary-grid" id="summary-grid">
@@ -630,7 +657,7 @@
             <div class="section-header">
                 <div class="section-label">Rullande bild</div>
                 <div class="section-title">Utveckling över tid</div>
-                <div class="section-subtitle">Andel avgjorda Union-spel med utdelning i ett kort fönster och i ett längre fönster, baserat på den historik som finns nu.</div>
+                <div class="section-subtitle">Andel avgjorda <span class="union-mark"><span class="union-word">Unio</span><span class="union-tail">n</span><span class="union-tm">TM</span></span>-spel med utdelning i ett kort fönster och i ett längre fönster, baserat på den historik som finns nu.</div>
             </div>
             <div class="chart-card">
                 <div class="chart-meta">
@@ -652,7 +679,7 @@
         <section>
             <div class="section-header">
                 <div class="section-label">Senaste utfall</div>
-                <div class="section-title">Avgjorda Union-spel</div>
+                <div class="section-title">Avgjorda <span class="union-mark"><span class="union-word">Unio</span><span class="union-tail">n</span><span class="union-tm">TM</span></span>-spel</div>
                 <div class="section-subtitle">Senaste avgjorda spelen visas först. Fokus ligger på tydlig, granskbar historik i stället för snygga totalsiffror.</div>
             </div>
             <div class="results-wrap" id="results-container">
@@ -675,7 +702,7 @@
             <div class="cta-card">
                 <div class="cta-copy">
                     <h3>Vill du ha kupongerna före start?</h3>
-                    <p>Prestandasidan visar vad som hände. Alpha är för dig som vill ha Union-kupongerna innan loppen går.</p>
+                    <p>Prestandasidan visar vad som hände. Alpha är för dig som vill ha <span class="union-mark"><span class="union-word">Unio</span><span class="union-tail">n</span><span class="union-tm">TM</span></span>-kupongerna innan loppen går.</p>
                 </div>
                 <a href="https://www.patreon.com/c/V85Modellen" target="_blank" rel="noopener" class="cta-button">Följ kupongerna på Patreon</a>
             </div>
