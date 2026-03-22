@@ -278,13 +278,37 @@
             color: #fff;
         }
 
+        .filter-chip.filter-chip-positive {
+            color: #7fe3a8;
+            border-color: rgba(0, 200, 83, 0.28);
+        }
+
+        .filter-chip.filter-chip-positive:hover {
+            color: #9af0bb;
+            border-color: rgba(0, 200, 83, 0.42);
+        }
+
+        .filter-chip.filter-chip-positive.active {
+            color: #9af0bb;
+            border-color: rgba(0, 200, 83, 0.42);
+            background: rgba(0, 200, 83, 0.14);
+        }
+
         .filter-chip-count {
             color: var(--text-muted);
             margin-left: 0.3rem;
         }
 
+        .filter-chip.filter-chip-positive .filter-chip-count {
+            color: rgba(127, 227, 168, 0.78);
+        }
+
         .filter-chip.active .filter-chip-count {
             color: rgba(255,255,255,0.7);
+        }
+
+        .filter-chip.filter-chip-positive.active .filter-chip-count {
+            color: rgba(154, 240, 187, 0.82);
         }
 
         .filter-note {
@@ -912,7 +936,9 @@
 
             return perf.filters.map(function(filter) {
                 const activeClass = filter.key === activeKey ? ' active' : '';
-                return '<button class="filter-chip' + activeClass + '" type="button" data-filter-key="' + escapeHtml(filter.key) + '">' +
+                const segment = perf.segments && perf.segments[filter.key];
+                const positiveClass = segment && segment.summary && Number(segment.summary.roi_pct || 0) > 0 ? ' filter-chip-positive' : '';
+                return '<button class="filter-chip' + positiveClass + activeClass + '" type="button" data-filter-key="' + escapeHtml(filter.key) + '">' +
                     escapeHtml(filter.label) +
                     '<span class="filter-chip-count">' + escapeHtml(String(filter.count || 0)) + '</span>' +
                     '</button>';
