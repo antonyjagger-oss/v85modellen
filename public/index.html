@@ -358,13 +358,60 @@
         }
 
         /* ── RESULTS TABLE ── */
-        .results-wrap { overflow-x: auto; margin-bottom: 3rem; }
+        .results-wrap { overflow-x: auto; margin-bottom: 1.25rem; }
 
         .rolling-summary {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 0.9rem;
             margin-bottom: 1rem;
+        }
+
+        .results-cta-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            background: linear-gradient(180deg, rgba(25, 39, 52, 0.96) 0%, rgba(21, 32, 43, 0.96) 100%);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem 1.15rem;
+            margin-bottom: 3rem;
+        }
+
+        .results-cta-copy h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.2rem;
+        }
+
+        .results-cta-copy p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            max-width: 650px;
+        }
+
+        .results-cta-link {
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.7rem 1rem;
+            border-radius: 999px;
+            background: rgba(29, 155, 240, 0.12);
+            border: 1px solid rgba(29, 155, 240, 0.28);
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.84rem;
+            font-weight: 700;
+            transition: background 0.2s, border-color 0.2s, color 0.2s;
+        }
+
+        .results-cta-link:hover {
+            background: rgba(29, 155, 240, 0.2);
+            border-color: rgba(29, 155, 240, 0.4);
+            color: #fff;
         }
 
         .rolling-stat {
@@ -1000,6 +1047,8 @@
             .pricing-amount { font-size: 2.8rem; }
             .section-header { padding: 3rem 0 1.5rem; }
             .hero-cta-row { flex-direction: column; align-items: center; }
+            .results-cta-card { flex-direction: column; align-items: flex-start; }
+            .results-cta-link { width: 100%; }
         }
 
         @media (max-width: 480px) {
@@ -1112,6 +1161,13 @@
             </div>
             <div class="results-wrap fade-in" id="results-container">
                 <div class="loading-message">Laddar resultat...</div>
+            </div>
+            <div class="results-cta-card fade-in">
+                <div class="results-cta-copy">
+                    <h3>Vill du se hela bilden?</h3>
+                    <p><span class="union-mark"><span class="union-word">Unio</span><span class="union-tail">n</span><span class="union-tm">TM</span></span> <code>/prestanda</code> samlar rullande utveckling, avgjorda spel och wrappar på ett ställe. Bra för dig som redan sett ett resultat på X och vill verifiera helheten snabbt.</p>
+                </div>
+                <a href="/prestanda" class="results-cta-link">Se full prestanda →</a>
             </div>
         </section>
 
