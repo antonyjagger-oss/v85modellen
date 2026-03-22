@@ -140,6 +140,38 @@ def fetch_recent_completed_union_runs(cur: sqlite3.Cursor) -> List[sqlite3.Row]:
     ).fetchall()
 
 
+def fetch_completed_union_runs(cur: sqlite3.Cursor) -> List[sqlite3.Row]:
+    return cur.execute(
+        """
+        WITH latest_union AS (
+            SELECT meet_id, MAX(created_at) AS max_created
+            FROM coupon_runs
+            WHERE mode = 'union' AND is_frozen = 1
+            GROUP BY meet_id
+        )
+        SELECT cr.run_id,
+               cr.meet_id,
+               cr.total_rows,
+               cr.total_cost,
+               cr.created_at,
+               cr.frozen_at,
+               g.type AS game_type,
+               g.status AS game_status,
+               g.timestamp AS game_timestamp
+        FROM latest_union lu
+        JOIN coupon_runs cr
+          ON cr.meet_id = lu.meet_id
+         AND cr.created_at = lu.max_created
+         AND cr.mode = 'union'
+         AND cr.is_frozen = 1
+        JOIN games g
+          ON g.id = cr.meet_id
+        WHERE g.status = 'results'
+        ORDER BY COALESCE(g.timestamp, cr.created_at) DESC
+        """
+    ).fetchall()
+
+
 def fetch_latest_union_coupons(cur: sqlite3.Cursor, limit: int = 3) -> List[sqlite3.Row]:
     return cur.execute(
         """
@@ -304,20 +336,134 @@ def build_coupon(cur: sqlite3.Cursor, row: sqlite3.Row) -> Optional[dict]:
     }
 
 
+def build_performance(recent_results: List[dict], wraps: List[dict], completed_rows: List[sqlite3.Row]) -> dict:
+    if not recent_results:
+        return {
+            "updated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+            "union_started_on": None,
+            "summary": {
+                "settled_games": 0,
+                "wins": 0,
+                "near_misses": 0,
+                "perfect_hits": 0,
+                "total_cost_sek": 0,
+                "total_payout_sek": 0,
+                "roi_pct": 0.0,
+            },
+            "rolling": {"window_days": [7, 30], "series": []},
+            "recent_results": [],
+            "recent_wraps": [],
+        }
+
+    results_by_date: Dict[str, List[dict]] = defaultdict(list)
+    for item in recent_results:
+        results_by_date[item["date"]].append(item)
+
+    ordered_dates = sorted(results_by_date.keys())
+    daily = []
+    for date_str in ordered_dates:
+        items = results_by_date[date_str]
+        settled_games = len(items)
+        wins = sum(1 for item in items if item.get("payout_sek"))
+        near_misses = sum(
+            1
+            for item in items
+            if item.get("hits", 0) == max(0, item.get("total_legs", 0) - 1)
+        )
+        perfect_hits = sum(
+            1 for item in items if item.get("hits", 0) == item.get("total_legs", 0)
+        )
+        total_cost = sum(item.get("cost_sek", 0) or 0 for item in items)
+        total_payout = sum(item.get("payout_sek", 0) or 0 for item in items)
+        roi_pct = round(((total_payout - total_cost) / total_cost) * 100, 1) if total_cost else 0.0
+        daily.append(
+            {
+                "date": date_str,
+                "settled_games": settled_games,
+                "wins": wins,
+                "near_misses": near_misses,
+                "perfect_hits": perfect_hits,
+                "total_cost_sek": total_cost,
+                "total_payout_sek": total_payout,
+                "roi_pct": roi_pct,
+            }
+        )
+
+    rolling_series = []
+    for idx, point in enumerate(daily):
+        row = {"date": point["date"]}
+        for window in (7, 30):
+            subset = daily[max(0, idx - window + 1): idx + 1]
+            settled_games = sum(item["settled_games"] for item in subset)
+            wins = sum(item["wins"] for item in subset)
+            row[f"win_rate_{window}d"] = round((wins / settled_games) * 100, 1) if settled_games else 0.0
+            total_cost = sum(item["total_cost_sek"] for item in subset)
+            total_payout = sum(item["total_payout_sek"] for item in subset)
+            row[f"roi_{window}d"] = round(((total_payout - total_cost) / total_cost) * 100, 1) if total_cost else 0.0
+        rolling_series.append(row)
+
+    total_cost = sum(item.get("cost_sek", 0) or 0 for item in recent_results)
+    total_payout = sum(item.get("payout_sek", 0) or 0 for item in recent_results)
+    summary = {
+        "settled_games": len(recent_results),
+        "wins": sum(1 for item in recent_results if item.get("payout_sek")),
+        "near_misses": sum(
+            1
+            for item in recent_results
+            if item.get("hits", 0) == max(0, item.get("total_legs", 0) - 1)
+        ),
+        "perfect_hits": sum(
+            1 for item in recent_results if item.get("hits", 0) == item.get("total_legs", 0)
+        ),
+        "total_cost_sek": total_cost,
+        "total_payout_sek": total_payout,
+        "roi_pct": round(((total_payout - total_cost) / total_cost) * 100, 1) if total_cost else 0.0,
+    }
+
+    union_started_on = None
+    if completed_rows:
+        raw_dates = []
+        for row in completed_rows:
+            raw_date = str(row["meet_id"]).split("_")[1] if "_" in str(row["meet_id"]) else None
+            if raw_date:
+                raw_dates.append(raw_date)
+        if raw_dates:
+            union_started_on = min(raw_dates)
+
+    return {
+        "updated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "union_started_on": union_started_on,
+        "summary": summary,
+        "rolling": {
+            "window_days": [7, 30],
+            "series": rolling_series,
+        },
+        "recent_results": recent_results[:30],
+        "recent_wraps": wraps[:8],
+    }
+
+
 def build_feed(con: sqlite3.Connection, price: int, db_path: str) -> dict:
     cur = con.cursor()
     recent_run_rows = fetch_recent_completed_union_runs(cur)
+    completed_union_rows = fetch_completed_union_runs(cur)
     coupon_rows = fetch_latest_union_coupons(cur, limit=3)
 
     recent_results = []
     wraps = []
-    for row in recent_run_rows:
+    all_results = []
+    all_wraps = []
+    for row in completed_union_rows:
         item = build_recent_result(cur, row, db_path)
         if item:
-            recent_results.append(item)
+            all_results.append(item)
         wrap = build_wrap(cur, row, db_path)
         if wrap:
-            wraps.append(wrap)
+            all_wraps.append(wrap)
+
+    recent_game_ids = {row["meet_id"] for row in recent_run_rows}
+    recent_results = [item for item in all_results if item["game_id"] in recent_game_ids]
+    wraps = [wrap for wrap in all_wraps if wrap["date"] in {item["date"] for item in recent_results}]
 
     coupons = []
     for row in coupon_rows:
@@ -340,6 +486,7 @@ def build_feed(con: sqlite3.Connection, price: int, db_path: str) -> dict:
         if item.get("hits", 0) == item.get("total_legs", 0)
     )
     roi_pct = round(((total_payout - total_cost) / total_cost) * 100, 1) if total_cost else 0.0
+    performance = build_performance(all_results, all_wraps, completed_union_rows)
 
     return {
         "brand": {
@@ -365,6 +512,7 @@ def build_feed(con: sqlite3.Connection, price: int, db_path: str) -> dict:
         "recent_results": recent_results[:10],
         "wraps": wraps[:4],
         "sample_coupons": coupons,
+        "performance": performance,
     }
 
 

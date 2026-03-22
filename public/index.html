@@ -101,6 +101,7 @@
             letter-spacing: -0.03em;
             color: var(--text);
             text-decoration: none;
+            white-space: nowrap;
         }
 
         .nav-logo img {
@@ -1006,6 +1007,16 @@
             .signal-bars { grid-template-columns: 1fr; }
         }
 
+        @media (max-width: 420px) {
+            .nav-badge { display: none; }
+            .nav-logo { font-size: 1rem; }
+            .nav-logo img {
+                width: 34px;
+                height: 34px;
+            }
+            nav { padding: 0 0.85rem; }
+        }
+
         /* ── SCROLL ANIMATIONS ── */
         .fade-in {
             opacity: 0;
@@ -1055,6 +1066,7 @@
         </div>
         <div class="nav-links">
             <a href="#resultat">Resultat</a>
+            <a href="/prestanda">Prestanda</a>
             <a href="#sammanfattning">Sammanfattning</a>
             <a href="#kuponger">Kuponger</a>
             <a href="#modellen">Om modellen</a>
@@ -1192,6 +1204,7 @@
     <!-- FOOTER -->
     <footer>
         <div class="footer-links">
+            <a href="/prestanda">Prestanda</a>
             <a href="https://www.patreon.com/c/V85Modellen" target="_blank" rel="noopener">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M15.386.524c-4.764 0-8.64 3.876-8.64 8.64 0 4.75 3.876 8.613 8.64 8.613 4.75 0 8.614-3.864 8.614-8.613C24 4.4 20.136.524 15.386.524zM.003 23.537h4.22V.524H.003z"/></svg>
                 Patreon

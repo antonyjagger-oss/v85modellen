@@ -8,3 +8,7 @@ projects/
 *.jsonl
 scripts/__pycache__/
 logs/
+BRAND_GUIDELINES.md
+V85MODELLEN_POSITIONING.md
+*.private.md
+*.internal.md

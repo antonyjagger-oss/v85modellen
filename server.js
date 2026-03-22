@@ -68,6 +68,16 @@ app.get('/', (req, res) => {
   }
 });
 
+app.get('/prestanda', (req, res) => {
+  const htmlPath = path.join(__dirname, 'public', 'prestanda.html');
+
+  if (fs.existsSync(htmlPath)) {
+    res.sendFile(htmlPath);
+  } else {
+    res.status(404).send('Prestanda-sidan hittades inte');
+  }
+});
+
 app.listen(port, () => {
   console.log(`V85Modellen running on port ${port}`);
 });
